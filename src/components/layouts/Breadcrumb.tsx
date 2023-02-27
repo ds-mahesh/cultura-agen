@@ -4,7 +4,7 @@ import { regionNames } from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
 type data = {
   name: any;
-  parents: any;
+  parents?: any;
   baseUrl: any;
   address: any;
 };

@@ -53,7 +53,7 @@ const Header = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="" style={{ backgroundColor: "whitesmoke" }}>
+      <div className="pb-6" style={{ backgroundColor: "whitesmoke" }}>
         <div style={{ height: "50px" }} className="flex gap-x-8 ">
           <div style={{ color:"navy", marginTop: "15px",marginLeft:"50px",fontSize:"16px" }} className="flex gap-x-8 font-medium">
             <a className="flex navbar-item" href={props?._site?.c_productUniverse.link} >

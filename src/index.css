@@ -429,7 +429,14 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 /*register-now-cta*/
 #register-now {
-  background-color: orange;
+  background-color: rgb(209, 88, 128);
+  color: white;
+}
+
+/*btn-kids-easter*/
+#btn-kids-easter {
+  background-color: #252855;
+  color: white;
 }
 
 /* faq */
