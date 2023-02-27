@@ -29,6 +29,12 @@ const Header = (props: any) => {
     </a>
   ));
 
+  const CulturaImage = props?._site?.c_culturaImage?.map((link: any) => (
+    <a className="flex gap-x-4 navbar-item" href="">
+      <img className="" style={{ height: "24px", width: "80px" }} src={link.url} />     
+    </a>
+  ));
+
   return (
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
@@ -40,8 +46,9 @@ const Header = (props: any) => {
       </div>
       <div className="" style={{ backgroundColor: "#5459bb" }}>
         <div style={{ height: "50px" }} className="flex gap-x-4">
+          <div className="mt-4 ml-4">{CulturaImage}</div>
            <div className=""><Nav/></div> 
-          <div style={{ marginLeft: "200px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
+          <div style={{ marginLeft: "120px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
             {NavBarlinks}
           </div>
         </div>

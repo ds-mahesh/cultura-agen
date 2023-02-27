@@ -7,6 +7,7 @@
   "fields": [
       "name",
       "c_topHeaderLink",
+      "c_culturaImage",
       "c_navBarlinks",
       "c_productUniverse",
       "c_specials",
@@ -16,7 +17,8 @@
       "c_socialNetworks",
       "c_helpServicesRegards",
       "c_topfooterlinks",
-      "c_coustomerservices"
+      "c_coustomerservices",
+      "c_back_to_top"
 
   ],
   "localization": {

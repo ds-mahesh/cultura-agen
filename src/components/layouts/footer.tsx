@@ -37,7 +37,7 @@ const Footer = (props: any) => {
 	const Topfooterlinks = props?._site?.c_topfooterlinks?.map((link: any) => (
 		<div className="" style={{ width: "150px" }}>
 			<a className="" href={link.link} >
-				<img src={link.image?.url} className=" h-12 w-12" /><br />
+				<img src={link.image?.url} className=" h-12 w-12 flex justify-center" />
 				<span className=""> {link.navBarLabel.label}</span>
 			</a>
 		</div>
@@ -46,7 +46,7 @@ const Footer = (props: any) => {
 	const SocialNetworks = props?._site?.c_socialNetworks?.map((link: any) => (
 		<div className="" style={{}}>
 			<a className="" href={link.link} >
-				<img src={link.image?.url} className="" style={{ height: "15px", width: "25px" }} /><br />
+				<img src={link.image?.url} className="" style={{ height: "15px", width: "20px" }} /><br />
 				{/* <span className=""> {link.navBarLabel?.label}</span> */}
 			</a>
 		</div>
@@ -87,6 +87,11 @@ const Footer = (props: any) => {
 	return (
 		<>
 			<footer className="site-footer inline-block w-full pt-6 " style={{ paddingTop: "20px" }}>
+			<div className="flex justify-center pb-4 text-base font-medium pt-6" style={{color:"navy"}}>
+				<button>
+              { props?._site?.c_back_to_top}
+			  </button>
+            </div>
 				<div style={{ backgroundColor: "#252855", height: "160px" }} >
 					<div className="flex space-x-24 pt-6" style={{ width: "1000px", marginLeft: "200px", color: "white" }}>
 						{Topfooterlinks}
@@ -105,11 +110,11 @@ const Footer = (props: any) => {
 						<Newsletter />
 					</div>
 					<div style={{ width: "380px" }}>
-						<h2 style={{ color: "navy",fontSize: "15px",marginLeft:"30px" }}>Customer service</h2>
-						<div className="">
-							<img style={{ height: "100px", width: "200px" }} src={props._site?.c_coustomerservices.image?.url} />
-							<p>{props._site?.c_coustomerservices.description}</p>
+						<h2 className="flex justify-center" style={{ color: "navy",fontSize: "15px",marginLeft:"30px" }}>Customer service</h2>
+						<div className="flex justify-center pt-4">
+							<img className="" style={{ height: "20px", width: "250px" }} src={props._site?.c_coustomerservices.image?.url} />							
 						</div>
+						<p className="flex justify-center pt-4">{props._site?.c_coustomerservices.description}</p>
 					</div>
 
 				</div>

@@ -72,7 +72,8 @@ import { useState } from "react";
                 value={name}
               /> */}
               <input
-              style={{width:"250px",height:"40px",marginTop:"20px",fontSize:"20px"}}
+              className="pl-4 rounded-l-md border border-solid border-gray-300"
+              style={{width:"250px",height:"40px",marginTop:"20px",fontSize:"16px"}}
                 aria-label="Your email address"
                 name="email_address"
                 placeholder="Your email address"
@@ -81,7 +82,7 @@ import { useState } from "react";
                 onChange={handleEmailChange}
                 value={email}
               />
-              <button style={{width:"100px",height:"45px",backgroundColor:"#252855",color:"white"}}><b>i valid </b></button>
+              <button className="rounded-r-md" style={{width:"100px",height:"45px",backgroundColor:"#252855",color:"white"}}><b>i valid </b></button>
             </form>
         )}
       </div>

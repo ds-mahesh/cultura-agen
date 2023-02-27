@@ -58,7 +58,7 @@ nav .active{ @apply bg-light-red}
 .selectedLabel{@apply block}
 
 /* Header */
-.site-header{   @apply pt-0 lg:pt-6 relative}
+.site-header{   @apply pt-0 lg:pt-1.5 relative}
 .site-header .header-top{  @apply border-b border-border-light border-opacity-[0.45] text-nav-link}
 .site-header .header-top .logo svg{  @apply w-36 h-auto lg:w-[14.625rem]}
 .site-header .header-top .logo img{  @apply w-36 h-14 lg:h-auto  lg:w-[14.625rem] mx-auto lg:ml-0}
@@ -427,6 +427,10 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .services-inner .splide__arrow--prev{@apply -left-8 }
 .services-inner .splide__arrow--next{ @apply -right-8 }
 
+/*register-now-cta*/
+#register-now {
+  background-color: orange;
+}
 
 /* faq */
 .faq-main-sec{@apply m-0 relative pb-7 pt-0 md:pb-12 }
