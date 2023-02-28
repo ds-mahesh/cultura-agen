@@ -76,7 +76,7 @@ const GetDirection = (props: GetDirection) => {
                       rel="noopener noreferrer"
                       conversionDetails={conversionDetails_direction}
                     >
-                        {buttonText}
+                      <button className=" rounded-lg" style={{backgroundColor:"DarkSlateBlue",width:"120px",height:"50px",color:"white"}}>  {buttonText}</button>
                     </Link>
     {/* <a
      onClick={getDirectionUrl} className="btn notHighlight" rel="noopener noreferrer" >

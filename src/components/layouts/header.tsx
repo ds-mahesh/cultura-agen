@@ -39,7 +39,7 @@ const Header = (props: any) => {
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
         <div style={{ height: "25px", backgroundColor: "" }} className="flex gap-x-4 ">
-          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "820px" }} className="flex gap-x-8 text-2xl ">
+          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "930px" }} className="flex gap-x-8 text-2xl ">
             {TopHeaderLink}
           </div>
         </div>
@@ -48,7 +48,7 @@ const Header = (props: any) => {
         <div style={{ height: "50px" }} className="flex gap-x-4">
           <div className="mt-4 ml-4">{CulturaImage}</div>
            <div className=""><Nav/></div> 
-          <div style={{ marginLeft: "120px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
+          <div style={{ marginLeft: "230px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
             {NavBarlinks}
           </div>
         </div>
@@ -69,7 +69,7 @@ const Header = (props: any) => {
               <span style={{color:"red"}} className="text-blue-600">{props?._site?.c_easter.label}</span>
             </a>            
           </div>
-          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"470px"}}>
+          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"580px"}}>
               {InspirationDIY}
             </div>
         </div>

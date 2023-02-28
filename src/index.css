@@ -101,10 +101,11 @@ body.menu-opened{ @apply overflow-hidden lg:overflow-auto;}
 /* banner sec */
 .banner-sec{ @apply bg-gray-light py-16 mt-4}
 .banner-sec h1{ @apply text-3xl text-center uppercase }
-.locator-main{ @apply  mt-10  align-bottom w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0}
+.locator-main{ @apply w-full max-w-[87.5rem] mx-auto px-0 md:px-4 lg:px-6 xl:px-0 }
 .left-listing{ @apply w-full md:w-[30rem] lg:w-[33.6875rem] float-left }
-.map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right}
-.locator-map-block{  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
+/* .map-section{@apply w-full md:w-[calc(100%_-_30rem)] lg:w-[calc(100%_-_33.6875rem)]  md:pl-8 float-right} */
+.map-section{@apply w-full}
+.locator-map-block{  @apply w-full  h-[120vh] md:h-screen top-0 order-1 lg:order-none z-[99];}
 .hero-section .hero-content .banner-text.banner-dark-bg{ @apply  border-l-0 inline-block flex flex-col items-center p-4      rounded-lg backdrop-blur-sm bg-Dark-red mx-auto w-[340px] sm:w-[500px] px-2.5 text-center}
 .hero-section .hero-content .banner-text.banner-dark-bg h1{  @apply text-2xl md:text-[1.75rem] mb-1.5 font-normal}
 .hero-section .hero-content .banner-text.banner-dark-bg h3{  @apply text-xl md:text-2xl font-normal}
@@ -123,14 +124,14 @@ body:not(.mapView) .mobile-btns .btn.listBtn{  @apply text-Dark-red border-t-0 b
 body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l-0 border-r-0 !border-b-2 !border-red  text-lg font-second-main-font !capitalize hover:bg-transparent  }
 
 /* left listing */
-.search-bx{@apply  mb-0  z-20 px-4 md:px-0  pt-0 pb-6 text-gray-dark float-left w-full md:w-[30rem] lg:w-[33.6875rem] border-b border-[#d8d8d8] }
+.search-bx{@apply rounded-lg  mb-0  z-20 px-4 md:px-0  pt-0 pb-6 text-gray-dark float-left w-full md:w-[30rem] lg:w-[33.6875rem] border-b border-[#d8d8d8] }
 .search-bx button{ @apply float-left mr-0 relative text-white text-xs sm:text-sm }
 .search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
 .search-bx button.useMyLocation .icon{@apply mr-1.5}
 .search-field{@apply flex relative  }
-.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-12 h-12 text-center bg-red hover:bg-hover-btn}  
+.search-bx .search-btn{@apply absolute top-9 rounded-r-md right-0  text-white p-2 w-12 h-12 text-center bg-red hover:bg-hover-btn}  
 .search-bx .search-btn svg{ @apply mx-auto}
-.search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
+.search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-md }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
 .search-bx .whitespace-nowrap{  @apply text-white !font-normal py-0 }
 .location{ @apply  border-b border-[#d8d8d8]  mt-0 }
@@ -153,8 +154,9 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-between  flex-col sm:flex-row}
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
-.location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
-.location-with-filter h1{@apply text-lg font-normal text-dark-gray my-0 font-second-main-font text-[1.75rem]}
+.location-with-filter{ @apply mb-9 flex justify-center  text-3xl }
+/* .location-with-filter h1{@apply text-3xl font-bold text-dark-gray my-0 font-second-main-font text-[3.75rem]} */
+.location-with-filter h1{@apply text-3xl font-bold text-dark-gray my-0 font-second-main-font text-[3rem]}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
 .button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
@@ -274,7 +276,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .open-now-string svg{  @apply fill-gray-dark}
 
 
-.closeing-div .opendot{ @apply  text-lg font-second-main-font text-gray relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
+.closeing-div .opendot{ @apply text-lg font-second-main-font text-gray relative before:hidden after:hidden  after:bg-[#338833] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
 .closeing-div .closeddot{ @apply  text-lg font-second-main-font text-gray relative  before:hidden after:hidden after:bg-[#EB001B] after:w-2 after:h-2  after:absolute after:top-1/2  after:ml-2 after:-translate-y-1/2  after:rounded-full}
 
 .banner-dark-bg .closeing-div .opendot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden }
@@ -337,11 +339,12 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .banner-text h1{ @apply text-red text-[2.4375rem] mb-3  mt-8 font-second-main-font}
 
 /* address sec */
-.location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[87.5rem] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11}
+/* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
+.location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-0 2xl:px-0 pb-7 pt-1 md:py-11}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg}
 .address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
-.box-title{@apply font-second-main-font text-[1.3125rem] md:text-[1.375rem] mb-4}
+.box-title{@apply font-second-main-font text-[0.75rem] md:text-[1.125rem] mb-4}
 .title-with-link{@apply flex justify-between items-center mb-4}
 .title-with-link .box-title{ @apply mb-0}
 .title-with-link-1{@apply flex justify-between items-center mb-4}
@@ -366,7 +369,8 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto  }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
-.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]}
+/* .map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[25rem] lg:h-auto  lg:w-[calc(100%_-_51.625rem)]} */
+.map-sec{  @apply  hidden md:block w-full mt-5 lg:mt-0  h-[80vh]}
 .map-sec.without-hours{  @apply md:w-[48%] md:mt-0 lg:w-[calc(100%_-_26rem)]}
 
 .about-sec{@apply  lg:bg-light-grey relative px-5 mt-0 lg:mt-7 pt-0 lg:py-12 lg:px-14   }
@@ -649,4 +653,36 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
+.locator-main {
+  position: absolute;
+  top: 304px;
+  bottom: 0;
+  width: 33.6875rem;
+  left: 80px;
+  background: #fff;
+  z-index: 99999999999999999999;
+}
+.search-bx {
+  background: #fff;
+}
 
+@media (min-width: 768px)
+{
+  .locator-map-block {
+    height: 120vh;
+}
+}
+
+.address-sec {
+  position: absolute;
+  top: 550px;
+  bottom: 0;
+  width: 35.6875rem;
+  left: 80px;
+  background: #fff;
+  z-index: 99999999999999999;
+}
+.address-main-sec {
+  margin-top: 0px;
+  width:  35.6875rem;
+}

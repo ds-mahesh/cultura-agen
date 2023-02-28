@@ -26,23 +26,34 @@ const Contact = (props: any) => {
   } = props;
   return (
     <>
-      <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+      <div className="address-main-sec rounded-lg">
+        <p className="box-title pl-6">{c_storeInfoHeading?c_storeInfoHeading:"contact details"}</p>
 
         <div className="icon-row content-col">
-          <div className="icon">
+          {/* <div className="icon">
             {" "}
             <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
-          </div>
+          </div> */}
           <div className="  address-text notHighlight">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
-            <div>{address.city}</div>
-            <div>{address.postalCode}</div>
+            <div className="flex space-x-32">
+            <div>{address.postalCode}{address.city} {phone}</div>
+          <div className="rounded-lg" >
+          <GetDirection
+            buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
+            address={address}
+            latitude={latitude}
+            longitude={longitude}
+          />         
+          </div>
+            </div>
+            
+            {/* <div>{address.postalCode}</div> */}
           </div>
         </div>
 
-        {phone ? (
+        {/* {phone ? (
           <div className="icon-row">
             <div className="icon">
               {" "}
@@ -56,9 +67,9 @@ const Contact = (props: any) => {
           </div>
         ) : (
           ""
-        )}
+        )} */}
 
-        <ul className="">
+        {/* <ul className="">
           <li className="button-bx direction-button">
             <GetDirection
               buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
@@ -67,7 +78,7 @@ const Contact = (props: any) => {
               longitude={longitude}
             />
           </li>
-        </ul>
+        </ul> */}
 
         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />

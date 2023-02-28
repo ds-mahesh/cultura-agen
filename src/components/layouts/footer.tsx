@@ -35,7 +35,7 @@ const Footer = (props: any) => {
 	// }
 
 	const Topfooterlinks = props?._site?.c_topfooterlinks?.map((link: any) => (
-		<div className="" style={{ width: "150px" }}>
+		<div className="" style={{ width: "160px" }}>
 			<a className="" href={link.link} >
 				<img src={link.image?.url} className=" h-12 w-12 flex justify-center" />
 				<span className=""> {link.navBarLabel.label}</span>
@@ -46,7 +46,7 @@ const Footer = (props: any) => {
 	const SocialNetworks = props?._site?.c_socialNetworks?.map((link: any) => (
 		<div className="" style={{}}>
 			<a className="" href={link.link} >
-				<img src={link.image?.url} className="" style={{ height: "15px", width: "20px" }} /><br />
+				<img src={link.image?.url} className="" style={{ height: "15px", width: "18px" }} /><br />
 				{/* <span className=""> {link.navBarLabel?.label}</span> */}
 			</a>
 		</div>
@@ -87,18 +87,18 @@ const Footer = (props: any) => {
 	return (
 		<>
 			<footer className="site-footer inline-block w-full pt-6 " style={{ paddingTop: "20px" }}>
-			<div className="flex justify-center pb-4 text-base font-medium pt-6" style={{color:"navy"}}>
+			<div className="flex justify-center pb-9 text-base font-medium pt-6 " style={{color:"navy"}}>
 				<button>
               { props?._site?.c_back_to_top}
 			  </button>
             </div>
 				<div style={{ backgroundColor: "#252855", height: "160px" }} >
-					<div className="flex space-x-24 pt-6" style={{ width: "1000px", marginLeft: "200px", color: "white" }}>
+					<div className="flex space-x-24 pt-6" style={{ width: "1000px", marginLeft: "250px", color: "white" }}>
 						{Topfooterlinks}
 					</div>
 				</div>
 
-				<div className="flex space-x-28 " style={{paddingTop:"20px"}}>
+				<div className="flex space-x-28 " style={{paddingTop:"20px",paddingLeft:"50px"}}>
 					<div className="" style={{paddingLeft:"100px"}}>
 						<h2 style={{ color: "navy",fontSize: "15px",marginLeft:"50px" }}>Social networks</h2>
 						<div className="flex space-x-6 pt-6">

@@ -564,7 +564,7 @@ const Tendency =
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-            <div className="h-20" style={{ backgroundColor: "skyblue" }}>
+            <div className="h-20" style={{ backgroundColor: "#5459bb" }}>
             <BreadCrumbs
               name={name}
               address={address}
@@ -573,17 +573,20 @@ const Tendency =
             ></BreadCrumbs>
             </div>
             <div className="container">
-              <div className='banner-text banner-dark-bg justify-center text-center'>
-                <h1 className="">{name}</h1>
-                <div className="openClosestatus detail-page closeing-div">
+              <div className='banner-text banner-dark-bg'>
+                <h1 className="" style={{fontSize:"50px",color:"navy"}}><b>{name}</b></h1>
+                <div className="openClosestatus detail-page closeing-div ">
                   <OpenClose timezone={timezone} hours={hours} />
                 </div>
               </div>
             </div>
             <div className="location-information">
+            {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
+            <div className="address-sec rounded-lg">
               <Contact address={address}
                 phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
-                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} hours={hours} additionalHoursText={additionalHoursText} ></Contact>
+                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} ></Contact>
+              </div>
               {
                 hours ?
                   <div className="map-sec" id="map_canvas">
@@ -630,6 +633,8 @@ const Tendency =
                 <div style={{width:"300px"}}>{GiftCard}</div>
               </div>
             </div>
+            {/* <PhotoSlider c_newsStore={NewsStore} */}
+            {/* /> */}
             <div className="">
               <h1 className="flex justify-center font-bold text-5xl text-gray-800" style={{ color: "navy" }}><b>Join!</b></h1>
               <div className="flex space-x-8 justify-center pt-6">
