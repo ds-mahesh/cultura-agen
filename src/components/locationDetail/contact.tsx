@@ -88,7 +88,7 @@ const Contact = (props: any) => {
 
       {hours && typeof hours.monday != "undefined" ? (
         <div className="hours">
-          <div className="hours-sec">
+          <div className="hours-sec rounded-b-lg">
             <div className="title-with-link-1">
               <h4 className="box-title">{"Opening "}</h4>
             </div>
