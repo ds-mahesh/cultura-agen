@@ -156,7 +156,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
 .location-with-filter{ @apply mb-9 flex justify-center  text-3xl }
 /* .location-with-filter h1{@apply text-3xl font-bold text-dark-gray my-0 font-second-main-font text-[3.75rem]} */
-.location-with-filter h1{@apply text-3xl font-bold text-dark-gray my-0 font-second-main-font text-[3rem]}
+.location-with-filter h1{@apply font-bold  my-0 font-second-main-font text-[3.75rem]}
 .list-count{ @apply border-b border-gray-light mb-4 p-2 flex  flex-row items-center}
 .result-inner{@apply p-4 }
 .button-bx{@apply flex flex-col sm:flex-row mt-2.5 justify-around  ml-6}
@@ -342,7 +342,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
 .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-0 2xl:px-0 pb-7 pt-1 md:py-11}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
-.address-main-sec .address-text{ @apply text-lg md:text-lg}
+.address-main-sec .address-text{ @apply text-lg md:text-lg font-semibold}
 .address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
 .box-title{@apply font-second-main-font text-[0.75rem] md:text-[1.125rem] mb-4}
 .title-with-link{@apply flex justify-between items-center mb-4}
@@ -675,7 +675,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .address-sec {
   position: absolute;
-  top: 550px;
+  top: 380px;
   bottom: 0;
   width: 35.6875rem;
   left: 80px;
@@ -685,4 +685,92 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec {
   margin-top: 0px;
   width:  35.6875rem;
+}
+
+.search-bx .search-btn:hover {
+  --tw-bg-opacity: 1;
+  background-color: darkcyan;
+}
+
+.location-with-filter {
+  color: darkslateblue;
+}
+
+.location .button-bx .btn {
+  background-color: white;
+  color: orangered;
+}
+
+@media (min-width: 768px)
+{
+body {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+}
+
+body {
+    font-family: "";
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(56 56 56 / var(--tw-text-opacity));
+}
+
+.location .result-inner .address-with-availablity {
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+.closeing-div .closeddot {
+  margin-left: 5px;
+}
+
+@media (min-width: 640px)
+{
+.fliter-sec {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 42px;
+}
+}
+
+@media (min-width: 768px)
+{
+.md\:pb-4 {
+    padding-bottom: 0rem;
+}
+}
+
+.location-with-filter h1 {
+  font-style: italic;
+}
+
+@media (min-width: 768px)
+{
+
+.box-title {
+    font-size: 1.225rem;
+    color: gray;
+}
+}
+
+@media (min-width: 768px)
+{
+.address-main-sec .address-text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    color: rgb(109, 98, 182);
+}
+}
+
+@media (min-width: 1024px)
+{
+.hours {
+    margin-top: 0px;
+    margin-right: 1rem;
+    width: 35.6875rem;
+    background-color: #fff;
+}
 }

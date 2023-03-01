@@ -18,7 +18,11 @@
       "c_helpServicesRegards",
       "c_topfooterlinks",
       "c_coustomerservices",
-      "c_back_to_top"
+      "c_back_to_top",
+      "c_easterlink",
+      "c_ourcourselink",
+      "c_productuniverselink",
+      "c_specialslink"
 
   ],
   "localization": {

@@ -7,6 +7,42 @@ import Nav from "./Nav";
 const Header = (props: any) => {
   const { label, images, _site } = props;
 
+  function show_hide() {
+    var click = document.getElementById("product-link");
+    if (click.style.display === "none") {
+      click.style.display = "block";
+    } else {
+      click.style.display ="none";
+    }
+  }
+
+  function show_hide1() {
+    var click = document.getElementById("specials-link");
+    if (click.style.display === "none") {
+      click.style.display = "block";
+    } else {
+      click.style.display = "none";
+    }
+  }
+
+  function show_hide2() {
+    var click = document.getElementById("our-cources-link");
+    if (click.style.display === "none") {
+      click.style.display = "block";
+    } else {
+      click.style.display = "none";
+    }
+  }
+
+  function show_hide3() {
+    var click = document.getElementById("easter-link");
+    if (click.style.display === "none") {
+      click.style.display = "block";
+    } else {
+      click.style.display = "none";
+    }
+  }
+
   let NewVAr: any = props.label;
   // console.log(props.label,"Props");
   const TopHeaderLink = props?._site?.c_topHeaderLink?.map((link: any) => (
@@ -19,6 +55,30 @@ const Header = (props: any) => {
     <a className="flex navbar-item" href={link.link} >
       <span className="text-blue-600">{link.navBarLabel.label}</span>
       <img style={{ height: "22px", width: "22px" }} src={link.image?.url} />
+    </a>
+  ));
+
+  const Productuniverselink = props?._site?.c_productuniverselink?.map((link: any) => (
+    <a className="flex" href={link.link}>
+     <button className="flex">{link.label}</button>      
+    </a>
+  ));
+
+  const Specialslink = props?._site?.c_specialslink?.map((link: any) => (
+    <a className="flex" href={link.link}>
+     <button >{link.label}</button>      
+    </a>
+  ));
+
+  const Ourcourselink = props?._site?.c_ourcourselink?.map((link: any) => (
+    <a className="flex" href={link.link}>
+     <button >{link.label}</button>      
+    </a>
+  ));
+
+  const Easterlink = props?._site?.c_easterlink?.map((link: any) => (
+    <a className="flex" href={link.link}>
+     <button >{link.label}</button>      
     </a>
   ));
 
@@ -39,7 +99,7 @@ const Header = (props: any) => {
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
         <div style={{ height: "25px", backgroundColor: "" }} className="flex gap-x-4 ">
-          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "930px" }} className="flex gap-x-8 text-2xl ">
+          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "970px" }} className="flex gap-x-8 text-2xl ">
             {TopHeaderLink}
           </div>
         </div>
@@ -48,32 +108,36 @@ const Header = (props: any) => {
         <div style={{ height: "50px" }} className="flex gap-x-4">
           <div className="mt-4 ml-4">{CulturaImage}</div>
            <div className=""><Nav/></div> 
-          <div style={{ marginLeft: "230px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
+          <div style={{ marginLeft: "200px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
             {NavBarlinks}
           </div>
         </div>
       </div>
       <div className="pb-6" style={{ backgroundColor: "whitesmoke" }}>
         <div style={{ height: "50px" }} className="flex gap-x-8 ">
-          <div style={{ color:"navy", marginTop: "15px",marginLeft:"50px",fontSize:"16px" }} className="flex gap-x-8 font-medium">
-            <a className="flex navbar-item" href={props?._site?.c_productUniverse.link} >
-              <span className="text-blue-600">{props?._site?.c_productUniverse.label}</span>
+          <div style={{ color:"navy", marginTop: "20px",marginLeft:"40px",fontSize:"17px" }} className="flex gap-x-12 font-medium">
+            <a className=" " href={props?._site?.c_productUniverse.link} style={{position: "relative", display: "inline-block" }}>
+              <button onMouseOver={show_hide} className="text-blue-600 font-bold">{props?._site?.c_productUniverse.label}</button>
             </a>
-            <a className="flex navbar-item" href={props?._site?.c_specials.link} >
-              <span className="text-blue-600">{props?._site?.c_specials.label}</span>
+            <a className=" " href={props?._site?.c_specials.link} style={{position: "relative", display: "inline-block"}}>
+              <button onMouseOver={show_hide1} className="text-blue-600 font-bold">{props?._site?.c_specials.label}</button>
             </a>
-            <a className="flex navbar-item" href={props?._site?.c_ourCourses.link} >
-              <span className="text-blue-600">{props?._site?.c_ourCourses.label}</span>
+            <a className=" " href={props?._site?.c_ourCourses.link} style={{position: "relative", display: "inline-block"}}>
+              <button onMouseOver={show_hide2} className="text-blue-600 font-bold">{props?._site?.c_ourCourses.label}</button>
             </a>
-            <a className="flex navbar-item" href={props?._site?.c_easter.link} >
-              <span style={{color:"red"}} className="text-blue-600">{props?._site?.c_easter.label}</span>
+            <a className="" href={props?._site?.c_easter.link} style={{position: "relative", display: "inline-block"}}>
+              <button onMouseOver={show_hide3} style={{color:"red"}} className="text-blue-600 font-bold">{props?._site?.c_easter.label}</button>
             </a>            
           </div>
-          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"580px"}}>
+          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"520px"}}>
               {InspirationDIY}
             </div>
         </div>
       </div>
+      <div id="product-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none"}}>{Productuniverselink}</div>
+      <div id="specials-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Specialslink}</div>
+      <div id="our-cources-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Ourcourselink}</div>
+      <div id="easter-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Easterlink}</div>   
     </>
   );
 };

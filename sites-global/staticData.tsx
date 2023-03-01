@@ -8,7 +8,7 @@ export const StaticData = {
     Brandname:"Cultura Agen - Infos pratiques",
     miles:"miles",
     tempClosed:"Temporarily Closed",
-    StoreDetailbtn:"View Store Detail",
+    StoreDetailbtn:"more information -->",
     Storehighlight:"Store Highlights",
     Days:"Days",
     Hours:"Hours",

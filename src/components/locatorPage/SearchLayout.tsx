@@ -252,7 +252,7 @@ const SearchLayout = (props: any): JSX.Element => {
             showEmptyMap={true}
           />
         </div>
-        <div className="locator-main ">
+        <div className="locator-main rounded-lg">
             {allowlocation.length > 0 ?
               <div className="for-allow">{allowlocation}</div>
               : ''}
@@ -260,8 +260,11 @@ const SearchLayout = (props: any): JSX.Element => {
               {/* <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div> */}
-
+              
               <div className="search-field pt-9 pl-6" >
+                <button className=" border-indigo-600" style={{backgroundColor:""}}>
+              <img style={{height:"30px",width:"30px"}} src="https://th.bing.com/th/id/R.c14c27631f64ac7395baf50cebae21a8?rik=rY2o5KxqTvQ%2fSw&riu=http%3a%2f%2fclipartmag.com%2fimages%2fgps-icon-23.png&ehk=A4U6Fjj1uqFu93WkOhgVYXb6jYav65jLRk0KbntsLDk%3d&risl=&pid=ImgRaw&r=0"/>
+              </button>
                 <FilterSearch
                   ref={filterRef}
                   displaymsg={displaymsg}
@@ -313,7 +316,7 @@ const SearchLayout = (props: any): JSX.Element => {
                 />
 
                 <button
-                  className="search-btn"
+                  className="search-btn" 
                   aria-label="Search bar icon"
                   id="search-location-button" onClick={Findinput}>
                   <span dangerouslySetInnerHTML={{ __html: search_icn }} />
@@ -321,14 +324,14 @@ const SearchLayout = (props: any): JSX.Element => {
               </div>
 
               <div className="fliter-sec">
-                <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
+                {/* <button className="useMyLocation" title="Search using your current location!" id="useLocation" onClick={onClick}>
                   <span className="icon" dangerouslySetInnerHTML={{ __html: UseMylocationsvg }} />
 
                   <span className="underline hover:no-underline"> {StaticData.Usemylocation}</span>
-                </button>
+                </button> */}
 
                 <ResultsCount
-                  customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
+                  customCssClasses={{ container: "mx- my-0 text-dark-gray" }}
                 />
               </div>
               <div className="left-listing">

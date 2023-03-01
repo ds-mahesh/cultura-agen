@@ -336,61 +336,61 @@ const Tendency =
     <img className="w-full h-96" src={link?.url} />
   ));
 
-  const NewsStore =
-    <a className="w-full" href={c_newsStore.cardcta.link} >
-      <div className="w-full">
-        <img className="h-96 w-full" src={c_newsStore.cardimage.url} />
-      </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
-        <h2 className="font-medium text-xl">{c_newsStore.cardTitle}</h2>
-        <p>Until {c_newsStore.cardDate}</p>
-        <h1 className="pt-12 font-bold">{c_newsStore.cardHeading}</h1>
-        <p className="text-xl font-medium pt-12 pb-6">{c_newsStore.carddescription}</p>
-        <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_newsStore.cardcta.label}</button>
-      </div>
-    </a>
+  // const NewsStore =
+  //   <a className="w-full" href={c_newsStore.cardcta.link} >
+  //     <div className="w-full">
+  //       <img className="h-96 w-full" src={c_newsStore.cardimage.url} />
+  //     </div>
+  //     <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
+  //       <h2 className="font-medium text-xl">{c_newsStore.cardTitle}</h2>
+  //       <p>Until {c_newsStore.cardDate}</p>
+  //       <h1 className="pt-12 font-bold">{c_newsStore.cardHeading}</h1>
+  //       <p className="text-xl font-medium pt-12 pb-6">{c_newsStore.carddescription}</p>
+  //       <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_newsStore.cardcta.label}</button>
+  //     </div>
+  //   </a>
 
-  const TheDivingBoard =
-    <a className="w-full" href={c_theDivingBoard.cardcta.link} >
-      <div className="w-full">
-        <img className="h-96 w-full" src={c_theDivingBoard.cardimage.url} />
-      </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
-        <h2 className="font-medium text-xl">{c_theDivingBoard.cardTitle}</h2>
-        <p>Until {c_theDivingBoard.cardDate}</p>
-        <h1 className="pt-12 font-bold">{c_theDivingBoard.cardHeading}</h1>
-        <p className="text-xl font-medium pt-12 pb-6">{c_theDivingBoard.carddescription}</p>
-        <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_theDivingBoard.cardcta.label}</button>
-      </div>
-    </a>
+  // const TheDivingBoard =
+  //   <a className="w-full" href={c_theDivingBoard.cardcta.link} >
+  //     <div className="w-full">
+  //       <img className="h-96 w-full" src={c_theDivingBoard.cardimage.url} />
+  //     </div>
+  //     <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
+  //       <h2 className="font-medium text-xl">{c_theDivingBoard.cardTitle}</h2>
+  //       <p>Until {c_theDivingBoard.cardDate}</p>
+  //       <h1 className="pt-12 font-bold">{c_theDivingBoard.cardHeading}</h1>
+  //       <p className="text-xl font-medium pt-12 pb-6">{c_theDivingBoard.carddescription}</p>
+  //       <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_theDivingBoard.cardcta.label}</button>
+  //     </div>
+  //   </a>
 
-  const ITeamUp =
-    <a className="w-full" href={c_iTeamUp.cardcta.link} >
-      <div className="w-full">
-        <img className="h-96 w-full" src={c_iTeamUp.cardimage.url} />
-      </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
-        <h2 className="font-medium text-xl">{c_iTeamUp.cardTitle}</h2>
-        <p>Until {c_iTeamUp.cardDate}</p>
-        <h1 className="pt-12 font-bold">{c_iTeamUp.cardHeading}</h1>
-        <p className="text-xl font-medium pt-12 pb-6">{c_iTeamUp.carddescription}</p>
-        <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_iTeamUp.cardcta.label}</button>
-      </div>
-    </a>
+  // const ITeamUp =
+  //   <a className="w-full" href={c_iTeamUp.cardcta.link} >
+  //     <div className="w-full">
+  //       <img className="h-96 w-full" src={c_iTeamUp.cardimage.url} />
+  //     </div>
+  //     <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
+  //       <h2 className="font-medium text-xl">{c_iTeamUp.cardTitle}</h2>
+  //       <p>Until {c_iTeamUp.cardDate}</p>
+  //       <h1 className="pt-12 font-bold">{c_iTeamUp.cardHeading}</h1>
+  //       <p className="text-xl font-medium pt-12 pb-6">{c_iTeamUp.carddescription}</p>
+  //       <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_iTeamUp.cardcta.label}</button>
+  //     </div>
+  //   </a>
 
-  const GiftCard =
-    <a className="w-full" href={c_giftCard.cardcta.link} >
-      <div className="w-full">
-        <img className="h-96" src={c_giftCard.cardimage.url} />
-      </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
-        <h2 className="font-medium text-xl">{c_giftCard.cardTitle}</h2>
-        <p>Until {c_giftCard.cardDate}</p>
-        <h1 className="pt-12 font-bold">{c_giftCard.cardHeading}</h1>
-        <p className="text-xl font-medium pt-12 pb-6">{c_giftCard.carddescription}</p>
-        <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_giftCard.cardcta.label}</button>
-      </div>
-    </a>
+  // const GiftCard =
+  //   <a className="w-full" href={c_giftCard.cardcta.link} >
+  //     <div className="w-full">
+  //       <img className="h-96" src={c_giftCard.cardimage.url} />
+  //     </div>
+  //     <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px" }}>
+  //       <h2 className="font-medium text-xl">{c_giftCard.cardTitle}</h2>
+  //       <p>Until {c_giftCard.cardDate}</p>
+  //       <h1 className="pt-12 font-bold">{c_giftCard.cardHeading}</h1>
+  //       <p className="text-xl font-medium pt-12 pb-6">{c_giftCard.carddescription}</p>
+  //       <button id="btn-kids-easter" className="rounded-lg px-4 py-4 border border-indigo-600">{c_giftCard.cardcta.label}</button>
+  //     </div>
+  //   </a>
 
   const Join = c_join?.map((link: any) => (
     <a className="" href={link.link} >
@@ -582,10 +582,10 @@ const Tendency =
             </div>
             <div className="location-information">
             {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
-            <div className="address-sec rounded-lg">
+            <div className="address-sec rounded-t-lg">
               <Contact address={address}
                 phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
-                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} ></Contact>
+                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} hours={hours}></Contact>
               </div>
               {
                 hours ?
@@ -627,16 +627,21 @@ const Tendency =
               <div className="text-xl font-semibold" style={{ color: "navy" }}>{c_notToBeMissed}</div>
               <div className="font-bold text-5xl text-gray-800 pt-4 pb-6" style={{ color: "navy" }}>{c_happensatculturaheading}</div>
               <div className="flex space-x-6"style={{}}>
-                <div style={{width:"300px"}}>{NewsStore} </div>
+                {/* <div style={{width:"300px"}}>{NewsStore} </div>
                 <div style={{width:"300px"}}>{TheDivingBoard} </div>
                 <div style={{width:"300px"}}>{ITeamUp}</div>
-                <div style={{width:"300px"}}>{GiftCard}</div>
+                <div style={{width:"300px"}}>{GiftCard}</div> */}
+                <PhotoSlider 
+                c_newsStore={c_newsStore}
+                c_theDivingBoard={c_theDivingBoard}
+                c_iTeamUp={c_iTeamUp}
+                c_giftCard={c_giftCard}
+            /> 
               </div>
             </div>
-            {/* <PhotoSlider c_newsStore={NewsStore} */}
-            {/* /> */}
-            <div className="">
-              <h1 className="flex justify-center font-bold text-5xl text-gray-800" style={{ color: "navy" }}><b>Join!</b></h1>
+            
+            <div className="pt-16">
+              <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue"}}><b>Join us!</b></h1>
               <div className="flex space-x-8 justify-center pt-6">
                 {Join}
               </div>

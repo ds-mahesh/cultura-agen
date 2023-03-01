@@ -26,7 +26,7 @@ const Contact = (props: any) => {
   } = props;
   return (
     <>
-      <div className="address-main-sec rounded-lg">
+      <div className="address-main-sec rounded-t-lg">
         <p className="box-title pl-6">{c_storeInfoHeading?c_storeInfoHeading:"contact details"}</p>
 
         <div className="icon-row content-col">
@@ -37,8 +37,8 @@ const Contact = (props: any) => {
           <div className="  address-text notHighlight">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
-            <div className="flex space-x-32">
-            <div>{address.postalCode}{address.city} {phone}</div>
+            <div className="flex space-x-20">
+            <div>{address.postalCode}{address.city}{phone}</div>
           <div className="rounded-lg" >
           <GetDirection
             buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
@@ -90,7 +90,7 @@ const Contact = (props: any) => {
         <div className="hours">
           <div className="hours-sec">
             <div className="title-with-link-1">
-              <h4 className="box-title">{"Store Opening Hours"}</h4>
+              <h4 className="box-title">{"Opening "}</h4>
             </div>
             <div className="hours-div mb-5 md:mb-1 flex flex-col">
               {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
@@ -110,7 +110,7 @@ const Contact = (props: any) => {
       </div> */}
               {hours && (
                 <Hours
-                  title={"Store Opening Hours"}
+                  title={" Opening"}
                   additionalHoursText={additionalHoursText}
                   hours={hours}
                   c_specific_day={c_specific_day}

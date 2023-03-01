@@ -53,7 +53,7 @@ const Footer = (props: any) => {
 	));
 
 	const HelpServicesRegards = props?._site?.c_helpServicesRegards?.map((link: any) => (
-		<a className="navbar-item" href={link.link} >
+		<a className="" href={link.link} >
 			<span>||{link.label} ||</span><br />
 		</a>
 	));
@@ -87,7 +87,7 @@ const Footer = (props: any) => {
 	return (
 		<>
 			<footer className="site-footer inline-block w-full pt-6 " style={{ paddingTop: "20px" }}>
-			<div className="flex justify-center pb-9 text-base font-medium pt-6 " style={{color:"navy"}}>
+			<div className="flex justify-center pb-9 text-lg font-bold pt-6 " style={{color:"navy"}}>
 				<button>
               { props?._site?.c_back_to_top}
 			  </button>
@@ -100,17 +100,17 @@ const Footer = (props: any) => {
 
 				<div className="flex space-x-28 " style={{paddingTop:"20px",paddingLeft:"50px"}}>
 					<div className="" style={{paddingLeft:"100px"}}>
-						<h2 style={{ color: "navy",fontSize: "15px",marginLeft:"50px" }}>Social networks</h2>
+						<h2 className="text-xl font-bold" style={{ color: "darkslateblue",marginLeft:"50px" }}>Social networks</h2>
 						<div className="flex space-x-6 pt-6">
 							{SocialNetworks}
 						</div>
 					</div>
 					<div className="">
-						<h2 style={{ color: "navy",fontSize: "15px",marginLeft:"100px" }}>Newsletter</h2>
+						<h2 className="text-xl font-bold" style={{ color: "darkslateblue",marginLeft:"100px" }}>Newsletter</h2>
 						<Newsletter />
 					</div>
 					<div style={{ width: "380px" }}>
-						<h2 className="flex justify-center" style={{ color: "navy",fontSize: "15px",marginLeft:"30px" }}>Customer service</h2>
+						<h2 className="flex justify-center text-xl font-bold" style={{ color: "darkslateblue",marginLeft:"30px" }}>Customer service</h2>
 						<div className="flex justify-center pt-4">
 							<img className="" style={{ height: "20px", width: "250px" }} src={props._site?.c_coustomerservices.image?.url} />							
 						</div>
@@ -123,7 +123,7 @@ const Footer = (props: any) => {
 
 				<div className="pt-12" style={{ height: "150px" }}>
 					<div style={{ height: "25px", backgroundColor: "" }} className="flex gap-x-4 ">
-						<div style={{ color: "navy", fontSize: "15px", marginLeft: "200px" }} className=" text-2xl ">
+						<div style={{ color: "darkslateblue",  marginLeft: "260px" }} className="text-xl font-bold">
 							<b className="flex space-x-28">{HelpServicesRegards}</b>
 						</div>
 					</div>

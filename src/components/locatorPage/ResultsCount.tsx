@@ -50,13 +50,13 @@ export function ResultsCountDisplay({
   }
 
   const messageArray = [
-    'Showing ',
-    offset + 1,
-    ' to ',
-    offset + resultsLength,
-    ' of ',
+    // 'Showing ',
+    // offset + 1,
+    // ' to ',
+    // offset + resultsLength,
+    // ' of ',
     resultsCount,
-    ' Results'
+    ' Stores'
   ];
 
   const spanArray = messageArray.map((value, index) => {
