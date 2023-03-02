@@ -7,6 +7,10 @@ import Nav from "./Nav";
 const Header = (props: any) => {
   const { label, images, _site } = props;
 
+  // const toggle = () => {
+	//   (document.getElementById("body") as HTMLInputElement).classList.toggle('');
+	// }
+
   function show_hide() {
     var click = document.getElementById("product-link");
     if (click.style.display === "none") {
@@ -116,28 +120,49 @@ const Header = (props: any) => {
       <div className="pb-6" style={{ backgroundColor: "whitesmoke" }}>
         <div style={{ height: "50px" }} className="flex gap-x-8 ">
           <div style={{ color:"navy", marginTop: "20px",marginLeft:"40px",fontSize:"17px" }} className="flex gap-x-12 font-medium">
-            <a className=" " href={props?._site?.c_productUniverse.link} style={{position: "relative", display: "inline-block" }}>
-              <button onMouseOver={show_hide} className="text-blue-600 font-bold">{props?._site?.c_productUniverse.label}</button>
+            <a className="flex " href={props?._site?.c_productUniverse.link} style={{position: "relative", display: "inline-block" }}>
+              <button onClick={show_hide} className="text-blue-600 font-bold">
+                {props?._site?.c_productUniverse.label}
+                <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+              </button>
+              
             </a>
             <a className=" " href={props?._site?.c_specials.link} style={{position: "relative", display: "inline-block"}}>
-              <button onMouseOver={show_hide1} className="text-blue-600 font-bold">{props?._site?.c_specials.label}</button>
+              <button onClick={show_hide1} className="text-blue-600 font-bold">
+                {props?._site?.c_specials.label}
+                <img className="h-6 w-32" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+                </button>
             </a>
             <a className=" " href={props?._site?.c_ourCourses.link} style={{position: "relative", display: "inline-block"}}>
-              <button onMouseOver={show_hide2} className="text-blue-600 font-bold">{props?._site?.c_ourCourses.label}</button>
+              <button onClick={show_hide2} className="text-blue-600 font-bold">
+                {props?._site?.c_ourCourses.label}
+                <img className="h-6 w-36" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+                </button>
             </a>
             <a className="" href={props?._site?.c_easter.link} style={{position: "relative", display: "inline-block"}}>
-              <button onMouseOver={show_hide3} style={{color:"red"}} className="text-blue-600 font-bold">{props?._site?.c_easter.label}</button>
+              <button onClick={show_hide3} style={{color:"red"}} className="text-blue-600 font-bold">
+                {props?._site?.c_easter.label}
+                <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+                </button>
             </a>            
           </div>
-          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"520px"}}>
+          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"350px"}}>
               {InspirationDIY}
             </div>
         </div>
       </div>
-      <div id="product-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none"}}>{Productuniverselink}</div>
-      <div id="specials-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Specialslink}</div>
-      <div id="our-cources-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Ourcourselink}</div>
-      <div id="easter-link" className="flex space-x-20 pl-12 bg-red h-20 font-semibold text-2xl" style={{ display: "none" }}>{Easterlink}</div>   
+      <div id="product-link" className="font-semibold text-2xl" style={{ display: "none"}}>
+        {Productuniverselink}
+        </div>
+      <div id="specials-link" className=" font-semibold text-2xl" style={{ display: "none" }}>
+        {Specialslink}
+        </div>
+      <div id="our-cources-link" className=" font-semibold text-2xl" style={{ display: "none" }}>
+        {Ourcourselink}
+        </div>
+      <div id="easter-link" className="font-semibold text-2xl" style={{ display: "none" }}>
+        {Easterlink}
+        </div>   
     </>
   );
 };

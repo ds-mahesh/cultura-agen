@@ -1,7 +1,7 @@
 export const StaticData = {
     Meta_title:" Cultura Agen - Infos pratiques - Online Store",
     Meta_description:"Visit Cultura Agen - Infos pratiques Store | Matalan is your local great value family retailer shop. Find latest seasonal looks for Women, Men and kids, plus a huge range of homeware.",
-    locator_breadcrumb:"Store Locator",
+    locator_breadcrumb:"Find your store",
     FindLocationtext:"Find Your Store",
     Usemylocation:"Use my location",
     Search:"Search",
@@ -16,6 +16,7 @@ export const StaticData = {
     Seconds:"Seconds",
     FAQheading:"How can we help ?",
     getDirection:"create a route",
+    getDirection_locator:"itinerary --> ",
     AllRegion:"All Regions of",
     NearStoretext:"NEARBY LOCATIONS",
     AllLocationtext:"View All Location",

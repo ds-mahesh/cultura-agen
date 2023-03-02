@@ -200,16 +200,18 @@ export const OpenStausFunctions = {
         return (
           <div className={"opendot green-dot"}>
 
-            <div className="hours-info " style={{ color: "orange" }}>
+            <div className="hours-info flex space-x-2" style={{ color: "orange" }}>
+            <img className="h-3 w-3 mt-2" src="https://th.bing.com/th/id/R.1c354171df4748691722dfcb2af41172?rik=pnL7yczkyK9LnQ&riu=http%3a%2f%2fimg.clipartlook.com%2forange-dot-clip-art-dot-clip-art-300_300.jpg&ehk=wlRfS20Tf2IDzPr05tNtQQ%2bCXRH4dw7vtHq8pHto3bQ%3d&risl=&pid=ImgRaw&r=0" />
               {" "}
-              <span className="font-second-main-font "> Open now - </span>
-              <span className="lowercase">
+              <span className=" font-second-main-font ">
+                 open until </span>
+              {/* <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.start).replace(
                   ":00",
                   ":00"
                 )}
               </span>{" "}
-              to{" "}
+              to{" "} */}
               <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.end).replace(
                   ":00",
@@ -229,8 +231,8 @@ export const OpenStausFunctions = {
             <div className="red-dot" style={{color:"orange"}}>
 
               <div className="hours-info ">
-                {/* <span className="font-second-main-font "> Closed - </span> */}
-                {"Open until  "}
+                <span className="font-second-main-font "> Closed - </span>
+                {"Open at"}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
                     ":00",
@@ -244,12 +246,12 @@ export const OpenStausFunctions = {
         );
       } else {
         return (
-          <div className={"closeddot 3"}>
+          <div className={"closeddot 3"} style={{color:"orange"}}>
             <div className="red-dot">
 
               <div className="hours-info ">
-                {/* <span className="font-second-main-font">Closed - </span> */}
-                {"Open until "}
+                <span className="font-second-main-font">Closed - </span>
+                {"Open at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
                     ":00",

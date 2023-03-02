@@ -22,7 +22,11 @@
       "c_easterlink",
       "c_ourcourselink",
       "c_productuniverselink",
-      "c_specialslink"
+      "c_specialslink",
+      "c_needhelp",
+      "c_whoareyou",
+      "c_servicesandproducts",
+      "c_inregardsto"
 
   ],
   "localization": {

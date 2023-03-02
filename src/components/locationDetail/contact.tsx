@@ -37,9 +37,9 @@ const Contact = (props: any) => {
           <div className="  address-text notHighlight">
             {address.line1}
             <div>{address.line2 && <div>{address.line2}</div>}</div>
-            <div className="flex space-x-20">
+            <div className="flex">
             <div>{address.postalCode}{address.city}{phone}</div>
-          <div className="rounded-lg" >
+          <div className="location-btn" >
           <GetDirection
             buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
             address={address}
@@ -87,8 +87,8 @@ const Contact = (props: any) => {
       </div>
 
       {hours && typeof hours.monday != "undefined" ? (
-        <div className="hours">
-          <div className="hours-sec rounded-b-lg">
+        <div className="hours rounded-b-lg">
+          <div className="hours-sec ">
             <div className="title-with-link-1">
               <h4 className="box-title">{"Opening "}</h4>
             </div>
@@ -108,14 +108,14 @@ const Contact = (props: any) => {
               {/* <div className="title-with-link-1">
         <h4 className="box-title">{"Store Hours"}</h4>        
       </div> */}
-              {hours && (
+              {/* {hours && (
                 <Hours
                   title={" Opening"}
                   additionalHoursText={additionalHoursText}
                   hours={hours}
                   c_specific_day={c_specific_day}
                 />
-              )}
+              )} */}
             </div>
           </div>
         </div>

@@ -82,13 +82,14 @@ const BreadCrumbs = (props: data) => {
     <div className="breadcrumb">
       <div className="container mx-auto">
         <ul className="flex">
-          <li>
+          <li style={{color:"white"}}>
             <Link className="home" href="/"
              data-ya-track="Breadcrumbs"
              eventName={`Breadcrumbs`}
              rel="noopener noreferrer"
              conversionDetails={conversionDetailsDirection}>
-            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
+            {/* <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/> */}
+            <div>welcome</div>
             </Link>
           </li>
           {/* <li>
@@ -99,7 +100,7 @@ const BreadCrumbs = (props: data) => {
           ) : (
             <>
               {props.address && props.address.city ? (
-                <li className="inline-block">
+                <li className="inline-block" style={{color:"white"}}>
                   {" "}
                   <Link href={props.baseUrl + props.address.city }
                    data-ya-track="Breadcrumbs"
@@ -115,7 +116,7 @@ const BreadCrumbs = (props: data) => {
             </>
           )}
          
-          <li>{props && props.name}</li>
+          <li style={{color:"white"}}>{props && props.name}</li>
 
         </ul>
       </div>

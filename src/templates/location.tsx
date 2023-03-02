@@ -12,6 +12,7 @@ import Logo from "../images/logo-header.svg"
 import offerBanner from "../images/offer-banner.jpg"
 import IframeMap from "../components/locationDetail/IframeMap";
 import "../index.css";
+import redmapimage from "../images/red-map.svg";
 import {
   Template,
   GetPath,
@@ -564,21 +565,26 @@ const Tendency =
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-            <div className="h-20" style={{ backgroundColor: "#5459bb" }}>
+            <div className="breadcrumb-header" style={{backgroundColor:"darkslateblue",color:"white"}}>
             <BreadCrumbs
               name={name}
               address={address}
               // parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
             ></BreadCrumbs>
-            </div>
+            
             <div className="container">
               <div className='banner-text banner-dark-bg'>
-                <h1 className="" style={{fontSize:"50px",color:"navy"}}><b>{name}</b></h1>
-                <div className="openClosestatus detail-page closeing-div ">
+                <h1 className="" style={{fontSize:"50px",color:"whitesmoke"}}><b>{name}</b></h1>
+                <div className="openClosestatus detail-page closeing-div pt-2">
                   <OpenClose timezone={timezone} hours={hours} />
                 </div>
+               <div className=" flex space-x-2 pt-3 pl-2"><img className=" " src="https://th.bing.com/th/id/R.38cd95fd9b5c36f07cb7283acb457abd?rik=9KyAWm1gpxL6uQ&riu=http%3a%2f%2fimages.clipartpanda.com%2flocation-icon-iphone-near-me.png&ehk=P4psrXav0nvYH93VgR%2bH52hOSydRzYWI3PJTxgTlvso%3d&risl=&pid=ImgRaw&r=0" width="20" height="20"
+                alt={''} />
+                <h6>Set as favorite store</h6>
+                </div>
               </div>
+            </div>
             </div>
             <div className="location-information">
             {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
@@ -624,8 +630,8 @@ const Tendency =
               </div>
             </div>
             <div className="pl-20 pt-36">
-              <div className="text-xl font-semibold" style={{ color: "navy" }}>{c_notToBeMissed}</div>
-              <div className="font-bold text-5xl text-gray-800 pt-4 pb-6" style={{ color: "navy" }}>{c_happensatculturaheading}</div>
+              <div className="text-xl font-semibold" style={{ color: "darkslateblue" }}>{c_notToBeMissed}</div>
+              <div className="font-bold text-5xl text-gray-800 pt-4 pb-6" style={{ color: "darkslateblue" }}>{c_happensatculturaheading}</div>
               <div className="flex space-x-6"style={{}}>
                 {/* <div style={{width:"300px"}}>{NewsStore} </div>
                 <div style={{width:"300px"}}>{TheDivingBoard} </div>

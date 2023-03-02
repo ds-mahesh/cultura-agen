@@ -282,7 +282,7 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
 .banner-dark-bg .closeing-div .opendot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden }
 .banner-dark-bg .closeing-div .closeddot{ @apply  font-main-font text-xl text-gray relative before:hidden after:hidden   }
 .detail-page .notHighlight{ @apply  text-2xl}
-.green-dot, .red-dot{ @apply  flex justify-center items-center  }
+.green-dot, .red-dot{ @apply  flex   }
 .green-dot svg, .red-dot svg{ @apply  mr-1  }
 
 
@@ -321,6 +321,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 }
 
 .breadcrumb ul li{
+  /* @apply after:content-[''] last:after:content-none after:w-1.5 after:h-1.5 md:after:w-2 md:after:h-2 after:border-r after:border-b after:border-nav-link after:transform after:-rotate-45 after:mx-1.5 md:after:mx-1.5 */
   @apply after:content-[''] last:after:content-none after:w-1.5 after:h-1.5 md:after:w-2 md:after:h-2 after:border-r after:border-b after:border-nav-link after:transform after:-rotate-45 after:mx-1.5 md:after:mx-1.5
 }
 .breadcrumb ul li a{ 
@@ -343,7 +344,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-0 2xl:px-0 pb-7 pt-1 md:py-11}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
 .address-main-sec .address-text{ @apply text-lg md:text-lg font-semibold}
-.address-main-sec .map-sec{ @apply block h-72 -ml-4 w-[100vw] md:hidden}
+.address-main-sec .map-sec{ @apply block  -ml-4 w-[100vw] md:hidden}
 .box-title{@apply font-second-main-font text-[0.75rem] md:text-[1.125rem] mb-4}
 .title-with-link{@apply flex justify-between items-center mb-4}
 .title-with-link .box-title{ @apply mb-0}
@@ -675,7 +676,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .address-sec {
   position: absolute;
-  top: 380px;
+  top: 500px;
   bottom: 0;
   width: 35.6875rem;
   left: 80px;
@@ -689,8 +690,18 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .search-bx .search-btn:hover {
   --tw-bg-opacity: 1;
-  background-color: darkcyan;
+  background-color: darkcyan; 
 }
+
+.search-bx .search-btn {
+  margin-right: 40px;
+}
+.search-field {
+  position: relative;
+  display: flex;
+  padding-right: 70px;
+}
+
 
 .location-with-filter {
   color: darkslateblue;
@@ -774,3 +785,35 @@ body {
     background-color: #fff;
 }
 }
+
+.location-name-miles h2 a {
+  font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+  font-size: 1.375rem;
+  --tw-text-opacity: 1;
+  color: rgb(56 56 56 / var(--tw-text-opacity));
+  margin-left: 5px;
+}
+
+.green-dot, .red-dot {
+  display: flex;
+  padding-left: 5px;
+}
+
+.site-footer .container {
+  margin-left: 220px;
+}
+
+.map-sec {
+  height: 100vh;
+  width: 100%;
+}
+@media (min-width: 1024px)
+{
+.left-listing {
+    
+    padding-right: 35px;
+}
+}
+
+
+

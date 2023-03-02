@@ -52,6 +52,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   //    url= `/${result.rawData.slug.toString()}.html`;
   //  }
 
+  // function show_hide3() {
+  //   var click = document.getElementById("easter-link");
+  //   if (click.style.display === "none") {
+  //     click.style.display = "block";
+  //   } else {
+  //     click.style.display = "none";
+  //   }
+  // }
+
   return (
     <div className={`location result-list-inner-${result.id} result`} id={`result-${result.id}`} key={`result-${result.rawData.id}`}>
       <div className="result-inner ">
@@ -111,7 +120,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
           <div className="button-bx">
               {result.rawData.displayCoordinate ?
                 <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
-                : <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+                : <GetDirection buttonText={StaticData.getDirection_locator} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
               <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}
