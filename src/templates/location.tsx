@@ -82,6 +82,7 @@ export const config: TemplateConfig = {
       "c_giftCard",
       // "c_happensatcultura",
       "c_join",
+      "c_joinheading",
       "c_newsOfthemoment",
       "c_tendency"
 
@@ -298,6 +299,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_happensatculturaheading,
     // c_happensatcultura,
     c_join,
+    c_joinheading,
     c_newsStore,
     c_theDivingBoard,
     c_iTeamUp,
@@ -605,7 +607,7 @@ const Tendency =
             </div>
             <div className="nearby-sec">
               <div className="container">
-                <div className="sec-title"><h2 className="">{StaticData.NearStoretext}</h2></div>
+                <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>
                 <div className="nearby-sec-inner">
                   {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
                     <Nearby externalApiData={externalApiData} />
@@ -647,8 +649,8 @@ const Tendency =
             </div>
             
             <div className="pt-16">
-              <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue"}}><b>Join us!</b></h1>
-              <div className="flex space-x-8 justify-center pt-6">
+              <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue"}}><b>{c_joinheading}</b></h1>
+              <div className="flex space-x-8 justify-center pt-6" id="join-btn">
                 {Join}
               </div>
             </div>

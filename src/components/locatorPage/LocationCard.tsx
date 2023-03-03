@@ -118,9 +118,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             <Address address={address} />
           </div>
           <div className="button-bx">
+            <div className="locator-get-btn">
               {result.rawData.displayCoordinate ?
-                <GetDirection buttonText={StaticData.getDirection} address={address} latitude={result.rawData.displayCoordinate?.latitude} longitude={result.rawData.displayCoordinate?.longitude} />
+                <GetDirection 
+                buttonText={StaticData.getDirection_locator}
+                 address={address} 
+                 latitude={result.rawData.displayCoordinate?.latitude} 
+                 longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection_locator} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
+              </div>
               <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
                 data-ya-track={`viewStore -${result.rawData.name}`}
                 eventName={`viewStore -${result.rawData.name}`}

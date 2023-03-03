@@ -73,7 +73,7 @@ import { useState } from "react";
               /> */}
               <input
               className="pl-4 rounded-l-md border border-solid border-gray-300"
-              style={{width:"250px",height:"40px",marginTop:"20px",fontSize:"16px"}}
+              style={{width:"260px",height:"40px",marginTop:"20px",fontSize:"16px"}}
                 aria-label="Your email address"
                 name="email_address"
                 placeholder="Your email address"

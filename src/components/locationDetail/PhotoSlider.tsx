@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+
 
 const PhotoSlider = (props: any) => {
   const { photoGallery, height, width, c_newsStore, c_theDivingBoard,c_iTeamUp,c_giftCard } = props;
@@ -8,11 +9,11 @@ const PhotoSlider = (props: any) => {
   const NewsStore =
     <SplideSlide>
       <a className="w-full" href={c_newsStore?.cardcta?.link} >
-      <div className="w-1/2">
-        <div className="">
-          <img className="h-96 w-1/2" src={c_newsStore?.cardimage?.url} />
-        </div>
-        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"darkslateblue" }}>
+      <div className=" w-full pr-9">  
+      <div>   
+          <img className="h-96" style={{paddingLeft:"350px"}} src={c_newsStore?.cardimage?.url} />  
+          </div>      
+        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"darkslateblue"}}>
           <h2 className="font-medium text-xl">{c_newsStore?.cardTitle}</h2>
           <p>Until {c_newsStore.cardDate}</p>
           <h1 className="pt-12 font-bold">{c_newsStore.cardHeading}</h1>
@@ -26,7 +27,7 @@ const PhotoSlider = (props: any) => {
   const TheDivingBoard =
     <SplideSlide>
       <a className="" href={c_theDivingBoard.cardcta.link} >
-      <div className="w-1/2" style={{backgroundColor:"pink"}}>
+      <div className="w-full pr-9">
         <div className="">
           <img className="h-96 w-full" src={c_theDivingBoard.cardimage.url} />
         </div>
@@ -44,7 +45,7 @@ const PhotoSlider = (props: any) => {
 const ITeamUp =
 <SplideSlide>
   <a className="" href={c_iTeamUp.cardcta.link} >
-  <div className="w-1/2" style={{backgroundColor:"pink"}}>
+  <div className="w-full pr-9" style={{color:"white"}}>
     <div className="">
       <img className="h-96 w-full" src={c_iTeamUp.cardimage.url} />
     </div>
@@ -63,7 +64,7 @@ const ITeamUp =
 const GiftCard =
 <SplideSlide>
   <a className="" href={c_giftCard.cardcta.link} >
-  <div className="w-1/2" style={{backgroundColor:"pink"}}>
+  <div className="w-full pr-9 ">
     <div className="">
       <img className="h-96 w-full" src={c_giftCard.cardimage.url} />
     </div>
@@ -80,7 +81,9 @@ const GiftCard =
   // ));
   return (
     <>
-      <Splide aria-label="Photo Slider">
+      <Splide aria-label="Photo Slider"
+       >
+        
         {NewsStore}
         {TheDivingBoard}
         {ITeamUp}

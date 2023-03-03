@@ -123,13 +123,13 @@ function sortByDay(week: Week): Week {
 
 const weekDays: any = {
   // "sunday": 0, // << if sunday is first day of week
-  monday: 1,
-  tuesday: 2,
-  wednesday: 3,
-  thursday: 4,
-  friday: 5,
-  saturday: 6,
-  sunday: 7,
+  // monday: 1,
+  // tuesday: 2,
+  // wednesday: 3,
+  // thursday: 4,
+  // friday: 5,
+  // saturday: 6,
+  // sunday: 7,
 };
 
 const renderHours = (week: Week, c_specific_day: any) => {
@@ -443,7 +443,7 @@ const Hours = (props: Hours) => {
             </span>
           </span>
         ) : (
-          <>{renderHours(hours, c_specific_day)}</>
+          <>{renderHours(hours,c_specific_day)}</>
         )}
       </table>
     </>

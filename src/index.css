@@ -343,7 +343,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 /* .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-4 2xl:px-0 pb-7 pt-1 md:py-11} */
 .location-information{  @apply flex flex-wrap w-full justify-between xl:justify-start max-w-[100%] mx-auto md:px-5 xl:px-0 2xl:px-0 pb-7 pt-1 md:py-11}
 .address-main-sec{@apply bg-address-bg px-4 md:px-6 py-4 md:py-6 w-full md:w-[48%]  lg:w-[24.8125rem] relative z-[0] md:mr-4 order-2 md:order-none mt-4 md:mt-4 lg:mt-0; } 
-.address-main-sec .address-text{ @apply text-lg md:text-lg font-semibold}
+.address-main-sec .address-text{ @apply text-lg md:text-lg }
 .address-main-sec .map-sec{ @apply block  -ml-4 w-[100vw] md:hidden}
 .box-title{@apply font-second-main-font text-[0.75rem] md:text-[1.125rem] mb-4}
 .title-with-link{@apply flex justify-between items-center mb-4}
@@ -686,12 +686,21 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .address-main-sec {
   margin-top: 0px;
   width:  35.6875rem;
+  padding-left: 5px;
 }
 
-.search-bx .search-btn:hover {
+@media (min-width: 1024px)
+{
+.hours {
+   
+    padding-left: 28px;
+}
+}
+
+/* .search-bx .search-btn:hover {
   --tw-bg-opacity: 1;
   background-color: darkcyan; 
-}
+} */
 
 .search-bx .search-btn {
   margin-right: 40px;
@@ -710,6 +719,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 .location .button-bx .btn {
   background-color: white;
   color: orangered;
+  width: 100%;
 }
 
 @media (min-width: 768px)
@@ -772,7 +782,7 @@ body {
 .address-main-sec .address-text {
     font-size: 1.25rem;
     line-height: 1.75rem;
-    color: rgb(109, 98, 182);
+    color: rgb(67, 76, 156);
 }
 }
 
@@ -815,5 +825,59 @@ body {
 }
 }
 
+
+#btn-join:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(42, 31, 105); 
+  color: #fff;
+}
+
+#register-now:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(76, 65, 167);
+  color: rgb(242, 248, 248);
+}
+
+#btn-kids-easter:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(146, 90, 38);
+  color: rgb(242, 248, 248);
+}
+
+@media (min-width: 768px)
+{
+.location .button-bx .btn.notHighligh {
+    width: 100%;
+}
+}
+
+.nearby-card .button-bx .btn {
+  width: 9.75rem;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: darkslateblue;
+  padding-top: 0rem;
+  padding-bottom: 0;
+  font-family: "futura_ptdemi", Georgia, Arial, sans-serif;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  border-radius: inherit;
+}
+
+@media (min-width: 1024px)
+{
+.nearby-card {
+    position: relative;
+    margin-top: 1.5rem;
+    width: 320px;
+}
+}
+.near-store-text{
+  color: darkskyblue;
+}
+
+.sec-title h2 {
+  color: darkslateblue;
+}
 
 

@@ -12,7 +12,7 @@ const Header = (props: any) => {
 	// }
 
   function show_hide() {
-    var click = document.getElementById("product-link");
+    var click :any= document.getElementById("product-link");
     if (click.style.display === "none") {
       click.style.display = "block";
     } else {
@@ -21,7 +21,7 @@ const Header = (props: any) => {
   }
 
   function show_hide1() {
-    var click = document.getElementById("specials-link");
+    var click :any = document.getElementById("specials-link");
     if (click.style.display === "none") {
       click.style.display = "block";
     } else {
@@ -30,7 +30,7 @@ const Header = (props: any) => {
   }
 
   function show_hide2() {
-    var click = document.getElementById("our-cources-link");
+    var click :any= document.getElementById("our-cources-link");
     if (click.style.display === "none") {
       click.style.display = "block";
     } else {
@@ -39,7 +39,7 @@ const Header = (props: any) => {
   }
 
   function show_hide3() {
-    var click = document.getElementById("easter-link");
+    var click :any= document.getElementById("easter-link");
     if (click.style.display === "none") {
       click.style.display = "block";
     } else {
@@ -88,7 +88,7 @@ const Header = (props: any) => {
 
   const InspirationDIY = props?._site?.c_inspirationDIY?.map((link: any) => (
     <a className="flex gap-x-4 navbar-item" href={link.link} >
-      <img className="rounded-full" style={{ height: "35px", width: "35px" }} src={link.image?.url} />
+      <img className="rounded-full" style={{ height: "40px", width: "40px" }} src={link.image?.url} />
       <span className="text-blue-600" style={{marginTop:"5px"}}>{link.navBarLabel.label}</span>     
     </a>
   ));

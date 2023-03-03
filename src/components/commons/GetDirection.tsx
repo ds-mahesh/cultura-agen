@@ -7,11 +7,13 @@ type Cta = {
   address :object;
   latitude?: number;
   longitude?: number;
+  buttonText1:string;
 };
 
 const GetDirection = (props: GetDirection) => {
   const { 
-    buttonText, 
+    buttonText,
+    buttonText1, 
     latitude,
 	address,
     longitude 
@@ -76,7 +78,8 @@ const GetDirection = (props: GetDirection) => {
                       rel="noopener noreferrer"
                       conversionDetails={conversionDetails_direction}
                     >
-                      <button className=" rounded-lg" style={{backgroundColor:"DarkSlateBlue",width:"120px",height:"50px",color:"white"}}>  {buttonText}</button>
+                      <button className=" rounded-lg" style={{width:"120px",height:"50px",color:"orangered",fontSize:"16px"}}>  {buttonText}</button>
+                      {/* <button className=" rounded-lg" style={{backgroundColor:"darkslateblue",width:"120px",height:"50px",color:"white"}}>  {buttonText1}</button> */}
                     </Link>
     {/* <a
      onClick={getDirectionUrl} className="btn notHighlight" rel="noopener noreferrer" >
