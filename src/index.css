@@ -141,7 +141,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location.fixed-hover .result-inner .svg-map-icn svg{@apply fill-red }
 
    
-.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2 flex-row lg:pl-7}
+.location .button-bx{  @apply max-w-lg justify-start xl:mx-auto pl-2}
 .result-list .location{ @apply first:mt-0}
 .location .button-bx .btn{@apply w-[9.75rem] bg-Dark-red font-second-main-font text-lg  border-none text-white    }
 .location .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-transparent justify-start mt-0  border-none text-black underline  }
