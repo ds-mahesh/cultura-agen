@@ -676,7 +676,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .address-sec {
   position: absolute;
-  top: 500px;
+  top: 550px;
   bottom: 0;
   width: 35.6875rem;
   left: 80px;

@@ -567,7 +567,7 @@ const Tendency =
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-            <div className="breadcrumb-header" style={{backgroundColor:"darkslateblue",color:"white"}}>
+            <div className="breadcrumb-header" style={{backgroundColor:"darkslateblue",color:"white",height:"250px"}}>
             <BreadCrumbs
               name={name}
               address={address}
