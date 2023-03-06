@@ -25,14 +25,14 @@ const Contact = (props: any) => {
     c_getDirectionsCTAText
   } = props;
 
-  function show_hide_hours() {
-    var click: any = document.getElementById("hours-btn");
-    if (click.style.display === "none") {
-      click.style.display = "block";
-    } else {
-      click.style.display = "none";
-    }
-  }
+  // function show_hide_hours() {
+  //   var click: any = document.getElementById("hours-btn");
+  //   if (click.style.display === "none") {
+  //     click.style.display = "block";
+  //   } else {
+  //     click.style.display = "none";
+  //   }
+  // }
 
 
   return (
@@ -101,14 +101,14 @@ const Contact = (props: any) => {
       {hours && typeof hours.monday != "undefined" ? (
         <div className="hours rounded-b-lg">
           <div className="hours-sec ">
-            <div className="title-with-link-1" style={{ display: "inline-block", position: "relative" }}>
-              <button onClick={show_hide_hours} className="box-title flex space-x-4" ><h6>{"Opening hours"}</h6>
-                <img className="h-6 w-6" src="https://cdn-icons-png.flaticon.com/512/57/57055.png" />
-                <p>------------------------------</p>
-                <h6>{"Mon.-Sun."}</h6>
+            <div className="title-with-link-1">
+              <button className="box-title flex space-x-4" ><h6>{"Opening hours"}</h6>
+                {/* <img className="h-6 w-6" src="https://cdn-icons-png.flaticon.com/512/57/57055.png" /> */}
+                {/* <p>------------------------------</p> */}
+                {/* <h6>{"Mon.-Sun."}</h6> */}
               </button>
             </div>
-            <div className="hours-div mb-5 md:mb-1 flex flex-col" id="hours-btn" style={{ display: "none" }}>
+            <div className="hours-div mb-5 md:mb-1 flex flex-col" id="hours-btn">
               {hours.holidayHours && typeof hours.reopenDate == "undefined" ? (
                 <>
                   <Model

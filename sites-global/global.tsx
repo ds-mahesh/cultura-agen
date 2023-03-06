@@ -19,8 +19,8 @@ export const conversionDetailsPhone = {
   cid: "",
   cv: "2",
 };
-export const center_latitude=51.5095146286;
-export const center_longitude=-0.1244828354;
+export const center_latitude= 48.864716 ;
+export const center_longitude= 2.349014;
 
 
 

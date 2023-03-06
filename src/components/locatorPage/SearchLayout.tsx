@@ -262,7 +262,7 @@ const SearchLayout = (props: any): JSX.Element => {
           </div> */}
 
             <div className="search-field pt-9 pl-6" >
-              <button className=" gps-icon border-indigo-600" style={{ backgroundColor: "" }}>
+              <button className=" gps-icon" style={{ backgroundColor: "" }}>
                 <img style={{ height: "30px", width: "30px" }} src="https://th.bing.com/th/id/R.c14c27631f64ac7395baf50cebae21a8?rik=rY2o5KxqTvQ%2fSw&riu=http%3a%2f%2fclipartmag.com%2fimages%2fgps-icon-23.png&ehk=A4U6Fjj1uqFu93WkOhgVYXb6jYav65jLRk0KbntsLDk%3d&risl=&pid=ImgRaw&r=0" />
               </button>
               <FilterSearch
@@ -335,10 +335,8 @@ const SearchLayout = (props: any): JSX.Element => {
               />
             </div>
             <div className="left-listing">
-
               <PerfectScrollbar >
-
-                <div>
+               <div>
                   <VerticalResults
                     displayAllOnNoResults={false}
                     CardComponent={LocationCard}

@@ -64,14 +64,15 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   return (
     <div className={`location result-list-inner-${result.id} result`} id={`result-${result.id}`} key={`result-${result.rawData.id}`}>
       <div className="result-inner ">
+      <hr/>
         <div className="center-column">
           <div className="lp-param-results lp-subparam-hours">
             <div className="location-name-miles icon-row">
-              <div className="icon text-black relative"> 
-              {/* <img className=" " src={redmapimage} width="20" height="20"
+              <div className="icon text-black relative">
+                {/* <img className=" " src={redmapimage} width="20" height="20"
                 alt={''} /><span className="map-count">D</span> */}
-                </div>
-              <h2><Link className="inline-block notHighlight"
+              </div>
+              <h2 id="location-card-name"><Link className="inline-block notHighlight"
                 data-ya-track={`viewDetail -${result.rawData.name}`}
                 eventName={`viewDetail -${result.rawData.name}`}
                 rel="noopener noreferrer"
@@ -83,7 +84,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 </div>
                 : ''}
             </div>
-            <div className="pl-7 pb-6">
+            <div className="pl-6 pb-6">
               {result.rawData.hours ? <>
                 <div className="mt-2">
                   {/* <h6>Opening Hours</h6> */}
@@ -114,29 +115,29 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
             </div>
           </div>
-          <div className="icon-row content-col address-with-availablity notHighlight">
-            <Address address={address} />
+          <div id="location-card-address" className="icon-row content-col address-with-availablity notHighlight">
+            <Address address={address} /><div>{result.rawData.mainPhone}</div>
           </div>
           <div className="button-bx">
             <div className="locator-get-btn">
               {result.rawData.displayCoordinate ?
-                <GetDirection 
-                buttonText={StaticData.getDirection_locator}
-                 address={address} 
-                 latitude={result.rawData.displayCoordinate?.latitude} 
-                 longitude={result.rawData.displayCoordinate?.longitude} />
+                <GetDirection
+                  buttonText={StaticData.getDirection_locator}
+                  address={address}
+                  latitude={result.rawData.displayCoordinate?.latitude}
+                  longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection_locator} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
-              </div>
-              <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
-                data-ya-track={`viewStore -${result.rawData.name}`}
-                eventName={`viewStore -${result.rawData.name}`}
-                rel="noopener noreferrer"
-              >
-                {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
-                {StaticData.StoreDetailbtn}
-              </Link>
             </div>
-      </div>
+            <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
+              data-ya-track={`viewStore -${result.rawData.name}`}
+              eventName={`viewStore -${result.rawData.name}`}
+              rel="noopener noreferrer"
+            >
+              {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
+              {StaticData.StoreDetailbtn}
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
 

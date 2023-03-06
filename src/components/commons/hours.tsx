@@ -423,6 +423,10 @@ const Hours = (props: Hours) => {
     s = join(new Date(hours.reopenDate), a, " ");
     dateNewFormat = s;
   }
+  const Hours= hours?.monday?.openIntervals?.map((link: any) => (
+    <span>{link.start}-{link.end}</span>
+  ));
+
 
   return (
     <>
@@ -433,8 +437,11 @@ const Hours = (props: Hours) => {
             <th>{StaticData.Hours}</th>
           </tr>
         </thead>
-
-        {hours && hours.reopenDate ? (
+        <div className="location-hours">
+       <div className="pb-4">{StaticData.WeekdayName}  .................................................................{Hours}</div>
+       <div>{StaticData.Sunday}  ..................................................................................... {"farm"}</div>
+       </div>
+        {/* {hours && hours.reopenDate ? (
           <span>
             {additionalHoursText} <br />
             <span>
@@ -444,7 +451,9 @@ const Hours = (props: Hours) => {
           </span>
         ) : (
           <>{renderHours(hours,c_specific_day)}</>
-        )}
+        )} */}
+
+
       </table>
     </>
   );

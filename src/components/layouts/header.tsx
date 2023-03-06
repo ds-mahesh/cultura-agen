@@ -20,6 +20,8 @@ const Header = (props: any) => {
     }
   }
 
+
+
   function show_hide1() {
     var click :any = document.getElementById("specials-link");
     if (click.style.display === "none") {
@@ -57,8 +59,8 @@ const Header = (props: any) => {
 
   const NavBarlinks = props?._site?.c_navBarlinks?.map((link: any) => (
     <a className="flex navbar-item" href={link.link} >
-      <span className="text-blue-600">{link.navBarLabel.label}</span>
-      <img style={{ height: "22px", width: "22px" }} src={link.image?.url} />
+      <span className=" text-blue-600">{link.navBarLabel.label}</span>
+      <img className="pl-2" style={{ height: "23px", width: "28px"}} src={link.image?.url} />
     </a>
   ));
 
@@ -112,7 +114,7 @@ const Header = (props: any) => {
         <div style={{ height: "50px" }} className="flex gap-x-4">
           <div className="mt-4 ml-4">{CulturaImage}</div>
            <div className=""><Nav/></div> 
-          <div style={{ marginLeft: "200px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-4">
+          <div style={{ marginLeft: "160px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-6">
             {NavBarlinks}
           </div>
         </div>
@@ -121,7 +123,7 @@ const Header = (props: any) => {
         <div style={{ height: "50px" }} className="flex gap-x-8 ">
           <div style={{ color:"navy", marginTop: "20px",marginLeft:"40px",fontSize:"17px" }} className="flex gap-x-12 font-medium">
             <a className="flex " href={props?._site?.c_productUniverse.link} style={{position: "relative", display: "inline-block" }}>
-              <button onClick={show_hide} className="text-blue-600 font-bold">
+              <button id="dropdown_button" onClick={show_hide} className="text-blue-600 font-bold">
                 {props?._site?.c_productUniverse.label}
                 <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
               </button>

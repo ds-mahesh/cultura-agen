@@ -26,7 +26,7 @@ const Footer = (props: any) => {
 	// }
 
 	const Topfooterlinks = props?._site?.c_topfooterlinks?.map((link: any) => (
-		<div className="" style={{ width: "160px" }}>
+		<div className="" style={{ width: "180px" }}>
 			<a className="" href={link.link} >
 				<img src={link.image?.url} className=" h-12 w-12 flex justify-center" />
 				<span className=""> {link.navBarLabel.label}</span>

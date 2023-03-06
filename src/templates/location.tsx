@@ -306,12 +306,17 @@ const Location: Template<ExternalApiRenderData> = ({
     c_giftCard
   } = document;
 
+  // const Hours= hours?.monday?.openIntervals?.map((link: any) => (
+  //   <span>{link.start}-{link.end}</span>
+  // ));
+
+
   const NewsOfthemoment = 
     <a className="w-full" href={c_newsOfthemoment.cardcta.link} >
       <div className="w-full">
         <img className="h-80 w-full" src={c_newsOfthemoment.cardimage.url} />
       </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"blue" }}>
+      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"darkslateblue" }}>
         <h2 className="font-medium text-xl">{c_newsOfthemoment.cardTitle}</h2>
         <p>Until {c_newsOfthemoment.cardDate}</p>
         <h1 className="pt-9 font-bold">{c_newsOfthemoment.cardHeading}</h1>
@@ -325,7 +330,7 @@ const Tendency =
   <div className="w-full">
     <img className="h-80 w-full" src={c_tendency.cardimage.url} />
   </div>
-  <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"rebeccapurple" }}>
+  <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"orangered" }}>
     <h2 className="font-medium text-xl">{c_tendency.cardTitle}</h2>
     <p>Until {c_tendency.cardDate}</p>
     <h1 className="pt-9 font-bold">{c_tendency.cardHeading}</h1>
@@ -605,6 +610,7 @@ const Tendency =
                   </div>
               }
             </div>
+          {/* <div>{Hours}</div> */}
             <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>
@@ -645,6 +651,7 @@ const Tendency =
                 c_iTeamUp={c_iTeamUp}
                 c_giftCard={c_giftCard}
             /> 
+            {/* <Slide c_newsStore={c_newsStore}/> */}
               </div>
             </div>
             

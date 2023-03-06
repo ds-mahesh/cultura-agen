@@ -1,10 +1,23 @@
 import * as React from "react";
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { Options } from '@splidejs/splide';
 
 
-const PhotoSlider = (props: any) => {
+const PhotoSlider = (props: any ,index :any) => {
   const { photoGallery, height, width, c_newsStore, c_theDivingBoard,c_iTeamUp,c_giftCard } = props;
+
+  const mainOptions: Options = {
+    type: 'loop',
+    perPage: 2,
+    perMove: 1,
+    gap: '1rem',
+    pagination: false,
+    height: '27.8125rem',
+  };
+
+
+
   // const Happensatcultura =props?.c_newsStore?.map((link: any) => (
   const NewsStore =
     <SplideSlide>
@@ -81,14 +94,17 @@ const GiftCard =
   // ));
   return (
     <>
-      <Splide aria-label="Photo Slider"
-       >
+     <Splide area-label="photo alider"
+      options={mainOptions}>
         
         {NewsStore}
         {TheDivingBoard}
         {ITeamUp}
         {GiftCard}
-      </Splide>
+        
+        
+        </Splide>
+    
     </>
   );
 };

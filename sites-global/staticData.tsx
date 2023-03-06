@@ -31,6 +31,8 @@ export const StaticData = {
     cookie:"cookies policy",
     Closed:"Closed",
     DayofWeek:"Day of the Week",
+    WeekdayName:"Mon.-Sat.",
+    Sunday:"Sun.",
     Reopenmessage:"Message - The store is temporarily closed. It will reopen at",
     Address:"Address",
     Telephone:"Telephone",

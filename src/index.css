@@ -880,4 +880,27 @@ body {
   color: darkslateblue;
 }
 
+#location-card-address {
+  color: rgb(84, 73, 158);
+}
 
+#location-card-name {
+  color: rgb(89, 76, 173);
+}
+
+table.day-hrs {
+  margin-bottom: 1rem;
+  width: 100%;
+  border-style: none;
+  color:rgb(89, 76, 173);
+}
+
+.text-dark-gray {
+  --tw-text-opacity: 1;
+  color: navy;
+}
+
+.text-red {
+  --tw-text-opacity: 1;
+  color: darkblue;
+}
