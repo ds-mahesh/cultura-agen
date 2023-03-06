@@ -676,7 +676,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .address-sec {
   position: absolute;
-  top: 550px;
+  top: 350px;
   bottom: 0;
   width: 35.6875rem;
   left: 80px;
@@ -814,7 +814,7 @@ body {
 }
 
 .map-sec {
-  height: 100vh;
+  height: 50vh;
   width: 100%;
 }
 @media (min-width: 1024px)
@@ -903,4 +903,11 @@ table.day-hrs {
 .text-red {
   --tw-text-opacity: 1;
   color: white;
+}
+
+.location-information {
+  justify-content: flex-start;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
 }

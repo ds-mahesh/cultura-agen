@@ -593,7 +593,7 @@ const Tendency =
               </div>
             </div>
             </div>
-            <div className="location-information">
+            <div className="location-information ">
             {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
             <div className="address-sec rounded-t-lg">
               <Contact address={address}
