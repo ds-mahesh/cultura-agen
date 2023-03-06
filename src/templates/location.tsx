@@ -646,10 +646,10 @@ const Tendency =
                 <div style={{width:"300px"}}>{ITeamUp}</div>
                 <div style={{width:"300px"}}>{GiftCard}</div> */}
                 <PhotoSlider 
-                c_newsStore={c_newsStore}
                 c_theDivingBoard={c_theDivingBoard}
                 c_iTeamUp={c_iTeamUp}
                 c_giftCard={c_giftCard}
+                c_newsStore={c_newsStore}
             /> 
             {/* <Slide c_newsStore={c_newsStore}/> */}
               </div>

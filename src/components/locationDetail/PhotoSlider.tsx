@@ -24,7 +24,7 @@ const PhotoSlider = (props: any ,index :any) => {
       <a className="w-full" href={c_newsStore?.cardcta?.link} >
       <div className=" w-full pr-9">  
       <div>   
-          <img className="h-96" style={{paddingLeft:"350px"}} src={c_newsStore?.cardimage?.url} />  
+          <img className="h-96" style={{paddingLeft:"300px"}} src={c_newsStore?.cardimage?.url} />  
           </div>      
         <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"darkslateblue"}}>
           <h2 className="font-medium text-xl">{c_newsStore?.cardTitle}</h2>
@@ -44,7 +44,7 @@ const PhotoSlider = (props: any ,index :any) => {
         <div className="">
           <img className="h-96 w-full" src={c_theDivingBoard.cardimage.url} />
         </div>
-        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"white" }}>
+        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"red" }}>
           <h2 className="font-medium text-xl">{c_theDivingBoard.cardTitle}</h2>
           {/* <p>Until {c_theDivingBoard.cardDate}</p> */}
           <h1 className="pt-12 font-bold">{c_theDivingBoard.cardHeading}</h1>
@@ -97,10 +97,11 @@ const GiftCard =
      <Splide area-label="photo alider"
       options={mainOptions}>
         
-        {NewsStore}
+       
         {TheDivingBoard}
         {ITeamUp}
         {GiftCard}
+        {NewsStore}
         
         
         </Splide>
