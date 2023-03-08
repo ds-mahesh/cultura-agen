@@ -172,11 +172,26 @@ const country: Template<TemplateRenderProps> = ({
       }
     }
 
+    let detailPageUrl = '';
+    var name: any = entity.name.toLowerCase();
+    var string: any = name.toString();
+    let removeSpecialCharacters = string.replace(
+      /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
+      "");
+    let result: any = removeSpecialCharacters.replaceAll(" ", "-");
+    if (!entity.slug || entity.slug == "undefined") {
+      detailPageUrl = `${entity.id}-${result}.html`
+    }
+    else {
+      detailPageUrl = `${entity.slug.toString()}.html`
+      console.log(detailPageUrl);
+    }
+
     return (
       <li className=" storelocation-category">
         <a
           key={entity.slug}
-          href={slug +"/"+ entity.slug + ".html"}
+          href={`/${detailPageUrl}`}
         >
           {entity.name} ({entity.dm_directoryChildrenCount})
         </a>

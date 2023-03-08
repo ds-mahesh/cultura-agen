@@ -51,7 +51,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
    } else {
      url= `/${result.rawData.slug.toString()}.html`;
    }
-   console.log(url,"props");
+  
 
   // function show_hide3() {
   //   var click = document.getElementById("easter-link");
