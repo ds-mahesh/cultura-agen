@@ -50,7 +50,8 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.dm_directoryChildrenCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
+      "dm_directoryChildren.yextDisplayCoordinate"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -125,6 +126,13 @@ const country: Template<TemplateRenderProps> = ({
     dm_directoryParents,
     dm_directoryChildren
   } = document;
+
+  let slugString = "";
+  document.dm_directoryParents.forEach((e: any) => {
+    slugString += e.slug + "/";
+  });
+  const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
+
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
 
@@ -207,12 +215,14 @@ const country: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
+        <div className="country-breadcrumb">
         <BreadCrumbs
           name={regionNames.of(name)}
           address={address}
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
         ></BreadCrumbs>
+        </div>
         <div className="content-list" style={{backgroundColor:"lightgreen"}}>
           <div className="container">
             <div className="sec-title">

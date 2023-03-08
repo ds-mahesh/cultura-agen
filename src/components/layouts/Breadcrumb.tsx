@@ -2,6 +2,7 @@ import * as React from "react";
 import { breadcrumbhome, conversionDetailsDirection } from "../../../sites-global/global";
 import { regionNames } from "../../../sites-global/global";
 import { Link } from "@yext/pages/components";
+import { StaticData } from "../../../sites-global/staticData";
 type data = {
   name: any;
   parents?: any;
@@ -82,7 +83,7 @@ const BreadCrumbs = (props: data) => {
     <div className="breadcrumb">
       <div className="container mx-auto">
         <ul className="flex">
-          <li style={{color:"white"}}>
+          <li style={{}}>
             <Link className="home" href="/"
              data-ya-track="Breadcrumbs"
              eventName={`Breadcrumbs`}
@@ -91,7 +92,17 @@ const BreadCrumbs = (props: data) => {
             {/* <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/> */}
             <div>welcome</div>
             </Link>
-          </li>
+            </li>
+            {/* <li>
+            <Link
+            className="home" href="/"
+             data-ya-track="Breadcrumbs"
+             eventName={`Breadcrumbs`}
+             rel="noopener noreferrer"
+             conversionDetails={conversionDetailsDirection}>
+              <div style={{color:"white"}}>{StaticData.locator_breadcrumb}</div>
+            </Link>
+          </li> */}
           {/* <li>
             <a href="https://main-sushi--issue--quotation-sbx-pgsdemo-com.sbx.preview.pagescdn.com/">Store Locator</a>
           </li> */}

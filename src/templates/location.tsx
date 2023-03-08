@@ -315,12 +315,12 @@ const Location: Template<ExternalApiRenderData> = ({
   // ));
 
 
-  const NewsOfthemoment = 
+  const NewsOfthemoment =
     <a className="w-full" href={c_newsOfthemoment.cardcta.link} >
       <div className="w-full">
         <img className="h-80 w-full" src={c_newsOfthemoment.cardimage.url} />
       </div>
-      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"darkslateblue" }}>
+      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px", color: "darkslateblue" }}>
         <h2 className="font-medium text-xl">{c_newsOfthemoment.cardTitle}</h2>
         <p>Until {c_newsOfthemoment.cardDate}</p>
         <h1 className="pt-9 font-bold">{c_newsOfthemoment.cardHeading}</h1>
@@ -329,20 +329,20 @@ const Location: Template<ExternalApiRenderData> = ({
       </div>
     </a>
 
-const Tendency = 
-<a className="w-full" href={c_tendency.cardcta.link} >
-  <div className="w-full">
-    <img className="h-80 w-full" src={c_tendency.cardimage.url} />
-  </div>
-  <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px" ,color:"orangered" }}>
-    <h2 className="font-medium text-xl">{c_tendency.cardTitle}</h2>
-    <p>Until {c_tendency.cardDate}</p>
-    <h1 className="pt-9 font-bold">{c_tendency.cardHeading}</h1>
-    <p className="text-xl font-medium pt-12 pb-6">{c_tendency.carddescription}</p>
-    <button id="btn-kids-easter" className="rounded-lg px-6 py-4 border border-indigo-600">{c_tendency.cardcta.label}</button><br />
-  </div>
-</a>
- 
+  const Tendency =
+    <a className="w-full" href={c_tendency.cardcta.link} >
+      <div className="w-full">
+        <img className="h-80 w-full" src={c_tendency.cardimage.url} />
+      </div>
+      <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px", color: "orangered" }}>
+        <h2 className="font-medium text-xl">{c_tendency.cardTitle}</h2>
+        <p>Until {c_tendency.cardDate}</p>
+        <h1 className="pt-9 font-bold">{c_tendency.cardHeading}</h1>
+        <p className="text-xl font-medium pt-12 pb-6">{c_tendency.carddescription}</p>
+        <button id="btn-kids-easter" className="rounded-lg px-6 py-4 border border-indigo-600">{c_tendency.cardcta.label}</button><br />
+      </div>
+    </a>
+
 
   const Registernowbgimage = c_registernowbgimage?.map((link: any) => (
     <img className="w-full h-96" src={link?.url} />
@@ -576,33 +576,32 @@ const Tendency =
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout _site={_site}>
-            <div className="breadcrumb-header" style={{backgroundColor:"darkslateblue",color:"white",height:"250px"}}>
-            <BreadCrumbs
-              name={name}
-              address={address}
-              parents={dm_directoryParents}
-              baseUrl={relativePrefixToRoot}
-            ></BreadCrumbs>
-            
-            <div className="container">
-              <div className='banner-text banner-dark-bg'>
-                <h1 className="" style={{fontSize:"50px",color:"whitesmoke"}}><b>{name}</b></h1>
-                <div className="openClosestatus detail-page closeing-div pt-2">
-                  <OpenClose timezone={timezone} hours={hours} />
-                </div>
-               <div className=" flex space-x-2 pt-3 pl-2"><img className=" " src="https://th.bing.com/th/id/R.38cd95fd9b5c36f07cb7283acb457abd?rik=9KyAWm1gpxL6uQ&riu=http%3a%2f%2fimages.clipartpanda.com%2flocation-icon-iphone-near-me.png&ehk=P4psrXav0nvYH93VgR%2bH52hOSydRzYWI3PJTxgTlvso%3d&risl=&pid=ImgRaw&r=0" width="20" height="20"
-                alt={''} />
-                <h6>Set as favorite store</h6>
+            <div className="breadcrumb-header" style={{ backgroundColor: "darkslateblue", color: "white", height: "250px" }}>
+              <BreadCrumbs
+                name={name}
+                address={address}
+                parents={dm_directoryParents}
+                baseUrl={relativePrefixToRoot}
+              ></BreadCrumbs>
+              <div className="container">
+                <div className='banner-text banner-dark-bg'>
+                  <h1 className="" style={{ fontSize: "50px", color: "whitesmoke" }}><b>{name}</b></h1>
+                  <div className="openClosestatus detail-page closeing-div pt-2">
+                    <OpenClose timezone={timezone} hours={hours} />
+                  </div>
+                  <div className=" flex space-x-2 pt-3 pl-2"><img className=" " src="https://th.bing.com/th/id/R.38cd95fd9b5c36f07cb7283acb457abd?rik=9KyAWm1gpxL6uQ&riu=http%3a%2f%2fimages.clipartpanda.com%2flocation-icon-iphone-near-me.png&ehk=P4psrXav0nvYH93VgR%2bH52hOSydRzYWI3PJTxgTlvso%3d&risl=&pid=ImgRaw&r=0" width="20" height="20"
+                    alt={''} />
+                    <h6>Set as favorite store</h6>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
             <div className="location-information ">
-            {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
-            <div className="address-sec rounded-t-lg">
-              <Contact address={address}
-                phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
-                yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} hours={hours}></Contact>
+              {/* <Contact address={address}  phone={mainPhone} ></Contact> */}
+              <div className="address-sec rounded-t-lg">
+                <Contact address={address}
+                  phone={mainPhone} latitude={yextDisplayCoordinate ? yextDisplayCoordinate.latitude : displayCoordinate?.latitude}
+                  yextDisplayCoordinate={yextDisplayCoordinate} longitude={yextDisplayCoordinate ? yextDisplayCoordinate.longitude : displayCoordinate?.longitude} additionalHoursText={additionalHoursText} hours={hours}></Contact>
               </div>
               {
                 hours ?
@@ -614,7 +613,7 @@ const Tendency =
                   </div>
               }
             </div>
-          {/* <div>{Hours}</div> */}
+            {/* <div>{Hours}</div> */}
             <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>
@@ -644,23 +643,23 @@ const Tendency =
             <div className="pl-20 pt-36">
               <div className="text-xl font-semibold" style={{ color: "darkslateblue" }}>{c_notToBeMissed}</div>
               <div className="font-bold text-5xl text-gray-800 pt-4 pb-6" style={{ color: "darkslateblue" }}>{c_happensatculturaheading}</div>
-              <div className="flex space-x-6"style={{}}>
+              <div className="flex space-x-6" style={{}}>
                 {/* <div style={{width:"300px"}}>{NewsStore} </div>
                 <div style={{width:"300px"}}>{TheDivingBoard} </div>
                 <div style={{width:"300px"}}>{ITeamUp}</div>
                 <div style={{width:"300px"}}>{GiftCard}</div> */}
-                <PhotoSlider 
-                c_theDivingBoard={c_theDivingBoard}
-                c_iTeamUp={c_iTeamUp}
-                c_giftCard={c_giftCard}
-                c_newsStore={c_newsStore}
-            /> 
-            {/* <Slide c_newsStore={c_newsStore}/> */}
+                <PhotoSlider
+                  c_theDivingBoard={c_theDivingBoard}
+                  c_iTeamUp={c_iTeamUp}
+                  c_giftCard={c_giftCard}
+                  c_newsStore={c_newsStore}
+                />
+                {/* <Slide c_newsStore={c_newsStore}/> */}
               </div>
             </div>
-            
+
             <div className="pt-16">
-              <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue"}}><b>{c_joinheading}</b></h1>
+              <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue" }}><b>{c_joinheading}</b></h1>
               <div className="flex space-x-8 justify-center pt-6" id="join-btn">
                 {Join}
               </div>
