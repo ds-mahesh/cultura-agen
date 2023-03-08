@@ -18,6 +18,7 @@ export const StaticData = {
     getDirection:"create a route",
     getDirection_locator:"itinerary --> ",
     AllRegion:"All Regions of",
+    AllCities:"All Cities of",
     NearStoretext:"NEARBY LOCATIONS",
     AllLocationtext:"View All Location",
     PagenotFound:"404 - Page Not Found",

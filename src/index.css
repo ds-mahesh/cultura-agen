@@ -793,6 +793,7 @@ body {
     margin-right: 1rem;
     width: 35.6875rem;
     background-color: #fff;
+    border-radius: 10px;
 }
 }
 
@@ -814,7 +815,7 @@ body {
 }
 
 .map-sec {
-  height: 50vh;
+  height: 60vh;
   width: 100%;
 }
 @media (min-width: 1024px)
@@ -911,3 +912,22 @@ table.day-hrs {
   padding-right: 0px;
   padding-top: 0px;
 }
+
+.banner-text {
+  padding-left: 22px;
+}
+
+/* .breadcrumb {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  
+}
+
+.breadcrumb .container ul li{
+  color: white;
+}
+.breadcrumb .container-custom ul li {
+  color:white;
+} */

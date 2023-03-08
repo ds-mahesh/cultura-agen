@@ -1,11 +1,25 @@
 import * as React from "react";
 // import Banner from "../components/banner";
-import GetDirection from "../components/commons/GetDirection";
-import constant from "../constant";
+// import favicon from "../images/Domino's Pizza-favIcon.ico";
+// import BreadCrumbs from "../components/layouts/BreadCrumbs";
+// import { AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../types/constants";
+// import GetDirection from "../components/GetDirection";
 // import { stagingBaseUrl } from "../constants";
-// import bannerImage from "../images/banner.png"
+// import bannerImage from "../images/app-bg.png";
+// import favicon from "../images/favicon-live.png";
+import Header from "../components/dmheader/Header";
+import Footer from "../components/dmheader/Footer";
+import {
+  AnalyticsProvider,
+  AnalyticsScopeProvider,
+} from "@yext/pages/components";
+import { Link } from "@yext/pages/components";
+//  import Logo from "../images/logo.svg";
+
 import "../index.css";
 var currentUrl = "";
+import "../index.css";
+// import "../main.css";
 import {
   Template,
   GetPath,
@@ -16,53 +30,73 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
-import BreadCrumbs from "../components/layouts/Breadcrumb";
-import Banner from "../components/locationDetail/banner";
-import { StaticData } from "../../sites-global/staticData";
-import { Addresssvg, favicon, mobilesvg, regionNames, stagingBaseurl } from "../../sites-global/global";
+// import { stagingBaseUrl } from "../config/globalConfig";
 import { JsonLd } from "react-schemaorg";
-import Address from "../components/commons/Address";
 import PageLayout from "../components/layouts/PageLayout";
-import Availability from "../components/locationDetail/Availability";
-import OpenClose from "../components/commons/openClose";
-import timesvg from "../images/watch-icn.svg";
-import { Link } from "@yext/pages/components";
+import BreadCrumbs from "../components/layouts/Breadcrumb";
+// import Herobanner from "../components/commons/Herobanner";
 var currentUrl = "";
 export const config: TemplateConfig = {
   stream: {
-    $id: "matlan-city",
+    $id: "ce_city",
     filter: {
+      savedFilterIds: ["dm_stores-directory_address_city"],
       entityTypes: ["ce_city"],
-      savedFilterIds: ["dm_matalan-stores-directory_address_city"],
     },
     fields: [
       "id",
       "uid",
       "meta",
       "name",
+      // "c_addressRegionDisplayName",
       "slug",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
       "dm_directoryChildren.name",
-      "dm_directoryChildren.mainPhone",
-      "dm_directoryChildren.c_open_for_shopping",
-      "dm_directoryChildren.c_click_collect_availability",
       "dm_directoryChildren.slug",
-      "dm_directoryChildren.name",
       "dm_directoryChildren.id",
+      "dm_directoryParents.dm_directoryChildrenCount",
       "dm_directoryChildren.dm_directoryChildrenCount",
       "dm_directoryChildren.address",
       "dm_directoryChildren.hours",
+      "dm_directoryChildren.mainPhone",
+      // "dm_directoryChildren.what3WordsAddress",
       "dm_directoryChildren.yextDisplayCoordinate"
+      // "c_globalData.c_headerLinks1",
+      // "c_globalData.c_footerLinks",
+      // "c_globalData.facebookPageUrl",
+      // "c_globalData.twitterHandle",
+      // "c_globalData.instagramHandle",
+      // "c_globalData.address",
+      // "c_globalData.c_phoneNumber",
+      // "c_globalData.c_companyrn",
+      // "c_globalData.c_tikTok",
+      //seo section
+      // "c_canonical",
+      // "c_metaDescription",
+      // "c_metaTitle",
     ],
     localization: {
-      locales: ["en_GB"],
+      locales: ["en"],
       primary: false,
     },
   },
 };
 
+let slugString = "";
+// export const getPath: GetPath<TemplateProps> = ({ document }) => {
+//   document.dm_directoryParents.forEach((e: any) => {
+//     if (e.sulg != "location" && e.slug != "gb") {
+//       slugString += e.slug + "/";
+//       slugString = slugString.replace("location", "");
+//     }
+//   });
+
+//   currentUrl = slugString + document.slug + ".html";
+
+//   return slugString + document.slug + ".html";
+// };
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var url: any = ""
   document.dm_directoryParents.map((i: any) => {
@@ -76,110 +110,104 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return url;
 };
 
+
+
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
   document,
+  __meta,
 }): HeadConfig => {
-  var canonical="";
-   document.dm_directoryChildren.map((entity: any) => {
-      canonical=  entity.address.countryCode.toLowerCase().replaceAll(" ", "-") + '/' +  entity.address.region.toLowerCase().replaceAll(" ", "-");
-          })
+
+  let metaDescription = document._site ? document._site : "Find your nearest Cultura Agen - Infos pratiques Store and which services are available." + document.name;
+  let metaTitle = `Cultura Agen - Infos pratiques Store in ${document.name} | Find a Local Store`;
+  // let canonicalURL = document._site.c_metaTags.canonicalURL  ? document._site.c_metaTags.canonicalURL + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"  : stagingBaseUrl + document.dm_directoryParents[1].name.toLowerCase() +"/"+ document.dm_directoryParents[2].slug +"/"+ document.slug + ".html"
+  // let ogmetaImage = document._site.c_ogmetaTags.oGImage[0].url ? document._site.c_ogmetaTags.oGImage[0].url : "https://cdn.Domino's Pizza.co.uk/en/assets/images/large/IMG_10480.jpg"
 
   return {
-    title: `${document.c_meta_title?document.c_meta_title:`MGM Stores in ${document.name} | Find a Local Store`}`,
+    title: metaTitle,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
       {
         type: "link",
         attributes: {
-          rel: "shortcut icon",
-          href: favicon,
+          rel: "icon",
+          type: "image/x-icon",
+          //href: favicon,
         },
       },
-        {
-          type: "meta",
-          attributes: {
-            name: "description",
-            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest MGM store in ${document.name} and discover the location details you need to visit us today.`}`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: `${metaDescription}`,
         },
+      },
 
-      //   {
-      //     type: "meta",
-      //     attributes: {
-      //       name: "title",
-      //       content: `${document.c_metaTitle}`,
-      //     },
+      // {
+      //   type: "meta",
+      //   attributes: {
+      //     name: "title",
+      //     content: `${metaTitle}`,
       //   },
-        {
-          type: "meta",
-          attributes: {
-            name: "author",
-            content: StaticData.Brandname,
-          },
+      // },
+      {
+        type: "meta",
+        attributes: {
+          name: "author",
+          content: " Cultura Agen - Infos pratiques",
         },
-        {
-          type: "meta",
-          attributes: {
-            name: "keywords",
-            content: document.name,
-          },
-        },
-        {
-          type: "meta",
-          attributes: {
-            name: "robots",
-            content: "noindex, nofollow",
-          },
-        },
+      },
 
-        {
-          type: "link",
-          attributes: {
-            rel: "canonical",
-            href: `${
-              stagingBaseurl 
-                 ? stagingBaseurl + canonical + "/"+ document.slug + ".html"
-                 : "/" + document.slug + ".html"
-            }`,
-          },
+      {
+        type: "meta",
+        attributes: {
+          name: "robots",
+          content: "noindex, nofollow",
         },
-      //   // /og tags
+      },
 
-        {
-          type: "meta",
-          attributes: {
-            property: "og:url",
-            content: `${
-              stagingBaseurl 
-                 ? stagingBaseurl + canonical + "/"+ document.slug + ".html"
-                 : "/" + document.slug + ".html"
-            }`,
-          },
+      {
+        type: "link",
+        attributes: {
+          rel: "canonical",
+          // href: ` ${canonicalURL}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:description",
-            content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
-          },
+      },
+      ///og tags
+
+      {
+        type: "meta",
+        attributes: {
+          property: "og:url",
+          // content: `${canonicalURL}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:title",
-            content: `${document.name}`,
-          },
+      },
+
+      {
+        type: "meta",
+        attributes: {
+          property: "og:description",
+          content: `${metaDescription}`,
         },
-        {
-          type: "meta",
-          attributes: {
-            property: "og:image",
-            content: favicon,
-          },
+      },
+      {
+        type: "meta",
+        attributes: {
+          property: "og:title",
+          content: `${metaTitle}`,
         },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "og:image",
+          // content: `${ogmetaImage}`
+        },
+      },
+
+      /// twitter tag
 
       {
         type: "meta",
@@ -191,16 +219,29 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       {
         type: "meta",
         attributes: {
-          name: "twitter:url",
-          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          name: "twitter:title",
+          content: `${metaTitle}`,
         },
       },
-
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:url",
+          // content: `${canonicalURL}`,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:image",
+          content: `https://www.Cultura Agen - Infos pratiques.co.uk/cs/groups/configfiles/documents/document/favicon.ico`
+        },
+      },
       {
         type: "meta",
         attributes: {
           name: "twitter:description",
-          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+          content: `${metaDescription}`,
         },
       },
     ],
@@ -214,6 +255,7 @@ const City: Template<TemplateRenderProps> = ({
 }) => {
   const {
     name,
+    c_addressRegionDisplayName,
     dm_directoryParents,
     dm_directoryChildren,
     c_globalData,
@@ -221,6 +263,7 @@ const City: Template<TemplateRenderProps> = ({
     c_metaDescription,
     c_metaTitle,
     _site,
+    __meta,
   } = document;
   var address;
   var c_companyrn;
@@ -241,9 +284,9 @@ const City: Template<TemplateRenderProps> = ({
   document.dm_directoryParents.forEach((e: any) => {
     slugString += e.slug + "/";
   });
+  const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   const childrenDivs = dm_directoryChildren.map((entity: any) => {
-    console.log(entity)
     var origin: any = null;
     if (entity.address.city) {
       origin = entity.address.city;
@@ -253,81 +296,190 @@ const City: Template<TemplateRenderProps> = ({
       origin = entity.address.country;
     }
     // let key: any = Object.keys(entity.hours)[0];
-    var url = "";
+    let detailPageUrl = '';
     var name: any = entity.name.toLowerCase();
-    var region: any = entity.address.region.toLowerCase();
-    var initialregion: any = region.toString();
-    var finalregion: any = initialregion.replaceAll(" ", "-");
-    var city: any = entity.address.city.toLowerCase();
-    var initialrcity: any = city.toString();
-    var finalcity: any = initialrcity.replaceAll(" ", "-");
-    var string: any = name.toString();;
-    let result: any = string.replaceAll(" ", "-");
-    if (!entity.slug) {
-      url = `/${entity.id}-${result}.html`;
-    } else {
-      url = `/${entity.slug.toString()}.html`;
+    var string: any = name.toString();
+    let removeSpecialCharacters = string.replace(
+      /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
+      "");
+    let result: any = removeSpecialCharacters.replaceAll(" ", "-");
+    if (!entity.slug || entity.slug == "undefined") {
+      detailPageUrl = `${entity.id}-${result}.html`
     }
-
-
-
+    else {
+      detailPageUrl = `${entity.slug.toString()}.html`
+      console.log(detailPageUrl);
+    }
     return (
+      <>
 
-      <div className="nearby-card">
-        <div className="location-name-miles icon-row">
-        {/* <div className="icon"> <img className=" " src={mapimage} width="20" height="20"
-                      alt="" /></div> */}
-          <h2><Link className="inline-block notHighlight" href={url}
-           data-ya-track={`viewstore-${entity.name}`}
-           eventName={`viewstore-${entity.name}`}
-           rel="noopener noreferrer"
-          >{entity.name}</Link></h2>
-        </div>
-        <div className="icon-row">
-          <Address address={entity.address} />
-        </div>
-        {entity.mainPhone?
-        <div className="icon-row">
-           {/* <div className="icon">
-           <img className=" " src={Phonesvg} width="20" height="20"
-                        alt="" />
-                        </div> */}
-          <div className="content-col">
-            <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
+
+        <div className="w-full sm:w-1/2 xl:w-1/3 px-[15px]">
+          <div className="near-location" style={{}}>
+            <h4>
+              <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
+                {entity.name}
+              </Link>
+            </h4>
+            <div className="store-address">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="21.23"
+                height="30"
+                viewBox="0 0 21.23 30"
+              >
+                <g transform="translate(0 0)">
+                  <path
+                    d="M6.789,23.576c1.079,1.719,2.246,3.8,3.4,5.825.427.747.813.859,1.326-.027,1.113-1.931,2.207-3.931,3.359-5.8,3.5-5.661,9.223-11.181,4.67-18.8C15.5-1.987,4.5-1.265,1.216,5.034c-3.769,7.219,2.117,13.039,5.574,18.542Z"
+                    fill="#d61a0c"
+                    fillRule="evenodd"
+                  />
+                  <path
+                    d="M10.61,6.247a4.116,4.116,0,1,1-4.116,4.116A4.117,4.117,0,0,1,10.61,6.247Z"
+                    fill="#a60d0d"
+                    fillRule="evenodd"
+                  />
+                </g>
+              </svg>
+              <p>
+                {entity.address.line1 ? entity.address.line1 : ""},
+                {entity.address.line2 ? entity.address.line2 : ""}
+                <br /> {entity.address.city ? entity.address.city : ""},{" "}
+                {entity.address.postalCode ? entity.address.postalCode : ""},{" "}
+                <br />
+                {entity.address.countryCode
+                  ? regionNames.of(entity.address.countryCode)
+                  : ""}{" "}
+                <br />
+              </p>
+            </div>
+            {/* <div className="store-phone w3w">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="21.23"
+              height="30"
+              viewBox="0 0 21.23 30"
+            >
+              <g id="map-pin-icon" transform="translate(0 0)">
+                <path
+                  id="Path_8"
+                  data-name="Path 8"
+                  d="M6.789,23.576c1.079,1.719,2.246,3.8,3.4,5.825.427.747.813.859,1.326-.027,1.113-1.931,2.207-3.931,3.359-5.8,3.5-5.661,9.223-11.181,4.67-18.8C15.5-1.987,4.5-1.265,1.216,5.034c-3.769,7.219,2.117,13.039,5.574,18.542Z"
+                  fill="#d61a0c"
+                  fillRule="evenodd"
+                />
+                <rect
+                  id="Rectangle_230"
+                  data-name="Rectangle 230"
+                  width="1"
+                  height="12"
+                  transform="matrix(0.966, 0.259, -0.259, 0.966, 8.186, 5.075)"
+                  fill="#fff"
+                />
+                <rect
+                  id="Rectangle_231"
+                  data-name="Rectangle 231"
+                  width="1"
+                  height="12"
+                  transform="matrix(0.966, 0.259, -0.259, 0.966, 12.186, 5.075)"
+                  fill="#fff"
+                />
+                <rect
+                  id="Rectangle_232"
+                  data-name="Rectangle 232"
+                  width="1"
+                  height="12"
+                  transform="matrix(0.966, 0.259, -0.259, 0.966, 16.186, 5.075)"
+                  fill="#fff"
+                />
+              </g>
+            </svg>
+            <a
+              target="_blank"
+              href={
+                entity.what3WordsAddress
+                  ? `https://what3words.com/${entity.what3WordsAddress} `
+                  : ""
+              }
+            >
+              What3Words
+            </a>
+          </div> */}
+            {entity.mainPhone && <div className="store-Pizza">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="23.987"
+                height="23.987"
+                viewBox="0 0 23.987 23.987"
+              >
+                <path
+                  d="M19.64,17.328c-.617,1.876-3.036,2.812-4.764,2.656A15.194,15.194,0,0,1,8,17.14,22.652,22.652,0,0,1,.885,8.652C-.22,6.3-.468,3.411,1.176,1.268A2.827,2.827,0,0,1,3.429,0C4.8-.063,4.992.721,5.463,1.943c.351.913.819,1.845,1.08,2.792C7.032,6.5,5.321,6.575,5.105,8.019c-.133.911.969,2.132,1.468,2.781A13.473,13.473,0,0,0,10.051,14c.76.479,1.984,1.341,2.853.865,1.339-.733,1.213-2.991,3.084-2.227a30.12,30.12,0,0,1,2.833,1.463c1.431.769,1.364,1.567.819,3.223h0"
+                  transform="translate(4.5) rotate(13)"
+                  fill="#d61a0c"
+                  fillRule="evenodd"
+                />
+              </svg>
+              <p>
+                <Link eventName={"PhoneNumber"} href={`tel:${entity.mainPhone}`} rel="noopener noreferrer">
+                  {entity.mainPhone}
+                </Link>
+              </p>
+            </div>}
+
+            <div className="store-link flex">
+              <Link
+                className="direction"
+                onClick={() => {
+                  getDirectionUrl(entity);
+                }}
+                href="javascript:void(0);"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M0,0H24V24H0Z" fill="none" />
+                  <path
+                    d="M22.43,10.59,13.42,1.58a2.051,2.051,0,0,0-2.83,0l-9,9a1.992,1.992,0,0,0,0,2.82l9,9a2,2,0,0,0,2.82,0l8.99-8.99A1.992,1.992,0,0,0,22.43,10.59ZM12.01,20.99l-9-9,9-9,9,9ZM8,11v4h2V12h4v2.5L17.5,11,14,7.5V10H9A1,1,0,0,0,8,11Z"
+                    fill="#fff"
+                  />
+                </svg>{" "}
+                <div className="card-img-top rounded-lg" style={{ backgroundColor: "green", fontSize: "16px", paddingTop: "5px", paddingLeft: "10px", height: "30px", width: "120px" }}> Get Directions</div>
+              </Link>
+              <a className="view-details" href={`/${detailPageUrl}`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22.403"
+                  height="14"
+                  viewBox="0 0 22.403 14"
+                >
+                  <g transform="translate(-15.975 -106)">
+                    <path
+                      d="M27.176,120a10.337,10.337,0,0,1-4.387-1.05,16.655,16.655,0,0,1-3.481-2.249,21.287,21.287,0,0,1-3.183-3.253.742.742,0,0,1,0-.9,21.288,21.288,0,0,1,3.183-3.253,16.655,16.655,0,0,1,3.481-2.249A10.337,10.337,0,0,1,27.176,106a10.337,10.337,0,0,1,4.387,1.05,16.655,16.655,0,0,1,3.481,2.249,21.023,21.023,0,0,1,3.183,3.253.742.742,0,0,1,0,.9,21.287,21.287,0,0,1-3.183,3.253,16.655,16.655,0,0,1-3.481,2.249A10.337,10.337,0,0,1,27.176,120Zm-9.492-7c1.171,1.386,5.04,5.507,9.492,5.507S35.5,114.386,36.669,113c-1.171-1.386-5.04-5.507-9.492-5.507S18.856,111.614,17.684,113Z"
+                      transform="translate(0 0)"
+                      fill="#fff"
+                    />
+                    <path
+                      d="M187.36,190.72a3.36,3.36,0,1,1,3.36-3.36A3.364,3.364,0,0,1,187.36,190.72Zm0-5.227a1.867,1.867,0,1,0,1.867,1.867A1.866,1.866,0,0,0,187.36,185.493Z"
+                      transform="translate(-160.184 -74.36)"
+                      fill="#fff"
+                    />
+                  </g>
+                </svg>{" "}
+                <div className="card-img-top rounded-lg" style={{ backgroundColor: "green", fontSize: "16px", paddingTop: "5px", paddingLeft: "10px", height: "30px", width: "120px" }}> View Details</div>
+
+              </a>
+            </div>
           </div>
-        </div>:''}
-       
-        <div className="icon-row">
-          <div className="content-col open-now-string">
-           
-            {typeof entity.hours?.reopenDate!="undefined"?
-            <h6>{StaticData.tempClosed}</h6>
-          :<OpenClose timezone={entity.timezone} hours={entity.hours}/>}
-           
-          </div>
         </div>
-        <div className="icon-row content-col availability-col">
-
-          <Availability c_openForShoppingAvailibility={entity.c_open_for_shopping}
-           c_clickCollectAvaliability={entity.c_click_collect_availability}
-           c_parking_facilities={entity.c_parking_facilities} c_fitting_rooms={entity.c_fitting_rooms}
-            hours={entity.hours} />
-        </div>
-
-
-
-        <div className="button-bx">
-          <Link className="btn" href={url}
-           data-ya-track={`viewstore-${entity.name}`}
-           eventName={`viewstore-${entity.name}`}
-           rel="noopener noreferrer"
-          >
-
-            {StaticData.StoreDetailbtn}</Link>
-          <GetDirection buttonText={StaticData.getDirection} address={entity.address} latitude={entity.yextDisplayCoordinate.latitude} longitude={entity.yextDisplayCoordinate.longitude} />
-        </div>
-      </div>
-  );
+        {/* </AnalyticsScopeProvider>
+      </AnalyticsProvider> */}
+      </>
+    );
   });
   function getDirectionUrl(entitiy: any) {
     var origin: any = null;
@@ -338,10 +490,10 @@ const City: Template<TemplateRenderProps> = ({
     } else {
       origin = entitiy.address.country;
     }
-    if (navigator.geoentity) {
+    if (navigator.geolocation) {
       const error = (error: any) => {
         var message_string =
-          "Unable to determine your entity. please share your entity";
+          "Unable to determine your location. please share your location";
         // if (confirm(message_string) != true) {
         //   var getDirectionUrl =
         //     "https://www.google.com/maps/dir/?api=1&destination=" +
@@ -365,8 +517,8 @@ const City: Template<TemplateRenderProps> = ({
 
         window.open(getDirectionUrl, "_blank");
       };
-      navigator.geoentity.getCurrentPosition(
-        function (position: any) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
           let currentLatitude = position.coords.latitude;
           let currentLongitude = position.coords.longitude;
           let getDirectionUrl =
@@ -400,81 +552,128 @@ const City: Template<TemplateRenderProps> = ({
       c_tikTok = i.c_tikTok ? i.c_tikTok : "";
     });
 
-  var url: any = ""
-
-  document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
-    }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}.html`
-    }
-  })
-  let breadcrumbScheme: any = [];
+  let templateData = { document: document, __meta: __meta };
+  // let breadcrumbScheme: any = [];
   let currentIndex: any = 0;
-  dm_directoryParents &&
-    dm_directoryParents.map((i: any, index: any) => {
-      currentIndex = index;
-      if (index != 0) {
-        breadcrumbScheme.push({
-          "@type": "ListItem",
-          position: index,
-          item: {
-            "@id": `${constant.stagingBaseurl}${i.slug}`,
-            name: i.name,
-          },
-        });
-      }
-    });
-
-  breadcrumbScheme.push({
-    "@type": "ListItem",
-    position: currentIndex + 1,
-    item: {
-      "@id": `${constant.stagingBaseurl}/${document.slug.toString()}.html`,
-      name: document.name,
-    },
-  });
+//   dm_directoryParents &&
+//     dm_directoryParents.map((i: any, index: any) => {
+//       currentIndex = index;
+//       if (index != 0) {
+//         breadcrumbScheme.push({
+//           "@type": "ListItem",
+//           position: 1,
+//           item: {
+//             "@id": `${stagingBaseUrl}/${i.slug}.html`,
+//             name: i.name,
+//           },
+//         });
+//       }
+//     });
+  // breadcrumbScheme.push({
+  //   "@type": "ListItem",
+  //   position: 1,
+  //   item: {
+  //     //"@id": `${stagingBaseUrl}${dm_directoryParents[1].slug}.html`,
+  //     name: dm_directoryParents[1].name,
+  //   },
+  // });
+  // breadcrumbScheme.push({
+  //   "@type": "ListItem",
+  //   position: 2,
+  //   item: {
+  //     //"@id": `${stagingBaseUrl}${dm_directoryParents[1].slug}/${dm_directoryParents[2].slug}.html`,
+  //     name: dm_directoryParents[2].name,
+  //   },
+  // });
+  // breadcrumbScheme.push({
+  //   "@type": "ListItem",
+  //   position: 3,
+  //   item: {
+  //    // "@id": `${stagingBaseUrl}${dm_directoryParents[1].slug}/${dm_directoryParents[2].slug}/${document.slug.toString()}.html`,
+  //     name: document.name,
+  //   },
+  // });
   return (
     <>
-      <JsonLd<Organization>
+      {/* <JsonLd<Organization>
         item={{
           "@context": "https://schema.org",
-          "@type": "Store",
-          name: "Matalan",
-          //   url: _site.c_canonical,
-          // logo: `${document.c_ogImage ? document.c_ogImage.map((result:any)=>{return result.url}) : ""}`
+          "@type": "Organization",
+          "name": "Domino's Pizza",
+          "url": "https://www.Domino's Pizza.co.uk/",
+          //"logo": favicon,
+          "sameAs": [
+            "https://www.twitter.com/Domino's Pizza",
+            "https://www.facebook.com/Domino's Pizza"
+          ],
         }}
-      />
-      <JsonLd<BreadcrumbList>
+      /> */}
+      {/* <JsonLd<BreadcrumbList>
         item={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
 
           itemListElement: breadcrumbScheme,
         }}
-      />
-      <PageLayout global={_site}>
-        <BreadCrumbs
-          name={name}
-          address={address}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-        ></BreadCrumbs>
+      /> */}
+      <AnalyticsProvider
 
-        <div className="content-list city-page">
-          <div className="container mx-auto">
-            <div className="sec-title">
-              <h2>
-              MGM stores in {name}
-              </h2>
+        templateData={templateData}
+      // enableDebugging={AnalyticsEnableDebugging}
+      // enableTrackingCookie={AnalyticsEnableTrackingCookie}
+      >
+        <AnalyticsScopeProvider name={""}>
+          
+         
+          <PageLayout _site={_site} templateData={{ __meta, document }}>
+
+            {/* <Header navbar={_site.c_navigationBarLinks}></Header> */}
+            {/* <Header personal={_site.c_personal} bussiness={_site.c_business} findAStore={_site.c_findAStore} networkStatusChecker={_site.c_networkStatusChecker}></Header> */}
+            <BreadCrumbs
+              name={name}
+              parents={dm_directoryParents}
+              baseUrl={relativePrefixToRoot}
+              address={{}}
+            ></BreadCrumbs>
+            <div className="header-title ">
+              {/* <Herobanner c_bannerTitle={_site.c_bannerTitle}></Herobanner> */}
             </div>
-            <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">
-              {childrenDivs}
+            {/* <Banner
+        Name={document.dm_directoryParents ? document.dm_directoryParents : []}
+        TagLine={""}
+        BackgroundImage={bannerImage}
+        CtaButton={""}
+        text={name ? name : ""}
+        template={"city"}
+      /> */}
+            <div style={{ backgroundColor: "lightgreen" }}>
+              <h1 className="sec_heading mt-12" style={{ textAlign: "center" }}>
+                Available Stores in {name}
+              </h1>
+              <div className="directory-country nearby-sec" style={{ backgroundColor: "lightcyan" }}>
+                <div className="container" >
+                  <div className="flex  flex-wrap justify-center -mx-[15px]" style={{}}>
+                    {childrenDivs}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </PageLayout>
+
+          </PageLayout  >
+        </AnalyticsScopeProvider>
+
+      </AnalyticsProvider>
+      {/* 
+      <Footer
+        data={c_footerLinks ? c_footerLinks : []}
+        address={address ? address : {}}
+        c_companyrn={c_companyrn ? c_companyrn : ""}
+        c_phoneNumber={c_phoneNumber ? c_phoneNumber : ""}
+        facebookPageUrl={facebookPageUrl ? facebookPageUrl : ""}
+        instagramHandle={instagramHandle ? instagramHandle : ""}
+        twitterHandle={twitterHandle ? twitterHandle : ""}
+        c_tikTok={c_tikTok ? c_tikTok : ""}
+      /> */}
     </>
   );
 };
