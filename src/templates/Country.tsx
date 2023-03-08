@@ -18,6 +18,7 @@ import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
 import Header from "../components/dmheader/Header";
 import Footer from "../components/dmheader/Footer";
+import { Link } from "@yext/pages/components";
 
 
 
@@ -197,13 +198,11 @@ const country: Template<TemplateRenderProps> = ({
 
     return (
       <li className=" storelocation-category">
-        <a
-          key={entity.slug}
-          href={`/${detailPageUrl}`}
-        >
-          {entity.name} ({entity.dm_directoryChildrenCount})
-        </a>
+        <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
+       {entity.name}
+     </Link>
       </li>
+       
     )
   }) : null;
 
