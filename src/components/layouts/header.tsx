@@ -1,15 +1,15 @@
 import * as React from "react";
 import Cta from "../commons/cta";
-import logo from "../../images/logo copy.png";
+// import logo from "../../images/logo copy.png";
 import "../../index.css";
 import Nav from "./Nav";
 
 const Header = (props: any) => {
   const { label, images, _site } = props;
 
-  // const toggle = () => {
-	//   (document.getElementById("body") as HTMLInputElement).classList.toggle('');
-	// }
+  const toggle = () => {
+	  (document.getElementById("body") as HTMLInputElement).classList.toggle('');
+	}
 
   function show_hide() {
     var click :any= document.getElementById("product-link");
@@ -89,14 +89,14 @@ const Header = (props: any) => {
   ));
 
   const InspirationDIY = props?._site?.c_inspirationDIY?.map((link: any) => (
-    <a className="flex gap-x-4 navbar-item" href={link.link} >
+    <a className="flex space-x-4 navbar-item" href={link.link} >
       <img className="rounded-full" style={{ height: "40px", width: "40px" }} src={link.image?.url} />
       <span className="text-blue-600" style={{marginTop:"5px"}}>{link.navBarLabel.label}</span>     
     </a>
   ));
 
   const CulturaImage = props?._site?.c_culturaImage?.map((link: any) => (
-    <a className="flex gap-x-4 navbar-item" href="">
+    <a className="flex space-x-4 navbar-item" href="">
       <img className="" style={{ height: "24px", width: "80px" }} src={link.url} />     
     </a>
   ));
@@ -104,24 +104,24 @@ const Header = (props: any) => {
   return (
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
-        <div style={{ height: "25px", backgroundColor: "" }} className="flex gap-x-4 ">
-          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "970px" }} className="flex gap-x-8 text-2xl ">
+        <div style={{ height: "25px", backgroundColor: "" }} className="flex space-x-4 ">
+          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "980px" }} className="flex space-x-8 text-2xl ">
             {TopHeaderLink}
           </div>
         </div>
       </div>
       <div className="" style={{ backgroundColor: "#5459bb" }}>
-        <div style={{ height: "50px" }} className="flex gap-x-4">
+        <div style={{ height: "50px" }} className="flex space-x-4">
           <div className="mt-4 ml-4">{CulturaImage}</div>
            <div className=""><Nav/></div> 
-          <div style={{ marginLeft: "160px", color: "whitesmoke", marginTop: "15px" }} className="flex gap-x-6">
+          <div style={{ marginLeft: "180px", color: "whitesmoke", marginTop: "15px" }} className="flex space-x-6">
             {NavBarlinks}
           </div>
         </div>
       </div>
       <div className="pb-6" style={{ backgroundColor: "whitesmoke" }}>
-        <div style={{ height: "50px" }} className="flex gap-x-8 ">
-          <div style={{ color:"navy", marginTop: "20px",marginLeft:"40px",fontSize:"17px" }} className="flex gap-x-12 font-medium">
+        <div style={{ height: "50px" }} className="flex space-x-8 ">
+          <div style={{ color:"navy", marginTop: "20px",marginLeft:"40px",fontSize:"17px" }} className="flex space-x-12 font-medium">
             <a className="flex " href={props?._site?.c_productUniverse.link} style={{position: "relative", display: "inline-block" }}>
               <button id="dropdown_button" onClick={show_hide} className="text-blue-600 font-bold">
                 {props?._site?.c_productUniverse.label}
@@ -148,7 +148,7 @@ const Header = (props: any) => {
                 </button>
             </a>            
           </div>
-          <div className="flex gap-x-8" style={{marginTop: "15px",marginLeft:"350px"}}>
+          <div className="flex space-x-8" style={{marginTop: "15px",marginLeft:"370px"}}>
               {InspirationDIY}
             </div>
         </div>

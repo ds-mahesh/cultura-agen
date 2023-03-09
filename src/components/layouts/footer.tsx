@@ -110,7 +110,7 @@ const Footer = (props: any) => {
 
 				</div>
 				<div className="pt-12 pb-24" style={{}}>
-					<div style={{ backgroundColor: "" }} className="flex gap-x-4 ">
+					<div style={{ backgroundColor: "" }} className="flex space-x-4 ">
 						<div style={{ color: "darkslateblue", marginLeft: "280px", position:"absolute", display: "inline-block" }} className="text-xl font-bold">
 							<button className="flex space-x-28">{HelpServicesRegards}</button>
 						</div>

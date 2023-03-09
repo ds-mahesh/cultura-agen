@@ -262,9 +262,9 @@ const SearchLayout = (props: any): JSX.Element => {
           </div> */}
 
             <div className="search-field pt-9 pl-6" >
-              <button className=" gps-icon" style={{ backgroundColor: "" }}>
-                <img style={{ height: "30px", width: "30px" }} src="https://th.bing.com/th/id/R.c14c27631f64ac7395baf50cebae21a8?rik=rY2o5KxqTvQ%2fSw&riu=http%3a%2f%2fclipartmag.com%2fimages%2fgps-icon-23.png&ehk=A4U6Fjj1uqFu93WkOhgVYXb6jYav65jLRk0KbntsLDk%3d&risl=&pid=ImgRaw&r=0" />
-              </button>
+              <div className="gps-icon-btn">
+                <img style={{ height: "25px", width: "25px" }} src="https://static.thenounproject.com/png/4277916-200.png" />
+              </div>
               <FilterSearch
                 ref={filterRef}
                 displaymsg={displaymsg}

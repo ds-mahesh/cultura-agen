@@ -4,11 +4,11 @@ import { GetHeadConfig, GetPath, HeadConfig, Template, TemplateConfig, TemplateP
 import { SearchHeadlessProvider } from "@yext/search-headless-react";
 import { FilterSearch, VerticalResults, ResultsCount, AppliedFilters, ApplyFiltersButton, LocationBias, Pagination } from "@yext/search-ui-react";
 import { Location } from "../types/search/locations";
-import MapboxMap from "../components/MapboxMap";
-import MapPin from "../components/MapPin";
+// import MapboxMap from "../components/MapboxMap";
+// import MapPin from "../components/MapPin";
 import LocationCard from "../components/locatorPage/LocationCard";
 import PageLayout from "../components/layouts/PageLayout";
-import Geocode from "react-geocode";
+// import Geocode from "react-geocode";
 import UseMyLocation from "../components/locatorPage/UseMyLocation"
 import { Address } from "../types/search/locations";
 import { useSearchActions } from "@yext/search-headless-react";
@@ -25,6 +25,7 @@ import {
   AnalyticsScopeProvider,
 } from "@yext/pages/components";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+import { LocatorPage } from "@yext/analytics";
 
 export const config: TemplateConfig = {
   stream: {
@@ -196,7 +197,6 @@ const Locator: Template<TemplateRenderProps>= ({
         {" "}
         <AnalyticsScopeProvider name={""}>
       <PageLayout _site={_site}>
-      {/* <Header _site={_site} /> */}
         <SearchHeadlessProvider
           experienceKey={AnswerExperienceConfig.experienceKey}
           locale={AnswerExperienceConfig.locale}

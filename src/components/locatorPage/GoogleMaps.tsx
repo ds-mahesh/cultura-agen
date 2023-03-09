@@ -29,7 +29,7 @@ import Address from "../commons/Address";
 import Phonesvg from "../../images/phone.svg";
 import { ResultsCount } from "@yext/search-ui-react";
 import OpenClose from "../commons/openClose";
-import $ from "jquery";
+import { $ } from "jquery";
 import { Directionsvg, View_Store } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
 import useFetchResults from "../../hooks/useFetchResults";
@@ -170,7 +170,7 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo, centerToSet = false) {
+  function zoomMapTo(zoomTo:any, centerToSet = false) {
     currentMapZoom = map.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;
@@ -317,7 +317,7 @@ function UnwrappedGoogleMaps({
       if (!info) {
         markers1.current[i].setIcon(Hovermap);
       }
-      locationResults.map((result, index) => {
+      locationResults.map((result:any, index:number) => {
         if (i == index) {
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
@@ -359,7 +359,7 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-      locationResults.map((result, index) => {
+      locationResults.map((result:any, index:number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
@@ -438,7 +438,7 @@ function UnwrappedGoogleMaps({
             }
             $(".result").removeClass("fixed-hover");
             // console.log('refLocationResults', refLocationResults);
-            refLocationResults.current.map((result, i) => {
+            refLocationResults.current.map((result:any, i:number) => {
               if (i == index) {
                 setHover(false);
                 isHover = false;

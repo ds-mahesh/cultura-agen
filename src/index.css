@@ -47,7 +47,7 @@ h2 {  @apply text-2xl font-normal;}
 .secondary-cta { @apply bg-Dark-red hover:bg-red;}
 .image { @apply rounded-xl drop-shadow-md;}
 .image:hover { transform: scale(1.02);  transition-duration: 0.3s;  cursor: pointer;}
-.social-link { @apply text-black flex gap-x-3  hover:cursor-pointer;}
+/* .social-link { @apply text-black flex gap-x-3  hover:cursor-pointer;} */
 .card {  @apply rounded-xl drop-shadow-md;}
 .card:hover {  transform: scale(1.02);  transition-duration: 0.3s;  cursor: pointer;}
 .pagination-conatiner button[disabled]{  @apply hidden  }
@@ -654,6 +654,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   .storelocation-openCloseTime table.day-hrs .currentDay .dayName .checked{@apply left-1}
 }
 
+@media {
 .locator-main {
   position: absolute;
   top: 304px;
@@ -663,8 +664,11 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   background: #fff;
   z-index: 99999999999999999999;
 }
+}
+@media {
 .search-bx {
   background: #fff;
+}
 }
 
 @media (min-width: 768px)
@@ -709,7 +713,18 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
   position: relative;
   display: flex;
   padding-right: 70px;
+
 }
+.gps-icon-btn {
+  border:1px solid gray;
+  border-radius: 5px;
+  height: 40px;
+width: 40px;
+padding-left: 4px;
+padding-top: 6px;
+margin-right: 8px;
+}
+
 
 
 .location-with-filter {
@@ -874,9 +889,9 @@ body {
     width: 320px;
 }
 }
-.near-store-text{
-  color: darkskyblue;
-}
+/* .near-store-text{
+  color: darkslateblue;
+} */
 
 .sec-title h2 {
   color: darkslateblue;
@@ -944,3 +959,4 @@ table.day-hrs {
   background-color:rgb(42, 31, 105);
   color: white;
 }
+
