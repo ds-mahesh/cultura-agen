@@ -615,7 +615,7 @@ const Location: Template<ExternalApiRenderData> = ({
               }
             </div>
             {/* <div>{Hours}</div> */}
-            <div className="nearby-sec">
+            {/* <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>
                 <div className="nearby-sec-inner">
@@ -624,7 +624,7 @@ const Location: Template<ExternalApiRenderData> = ({
                     : ''}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="flex space-x-6  pl-20 pr-20">
               {NewsOfthemoment}
               {Tendency}
@@ -658,6 +658,16 @@ const Location: Template<ExternalApiRenderData> = ({
                 {/* <Slide c_newsStore={c_newsStore}/> */}
               </div>
             </div>
+            <div className="nearby-sec">
+              <div className="container">
+                <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>
+                <div className="nearby-sec-inner">
+                  {yextDisplayCoordinate || cityCoordinate || displayCoordinate ?
+                    <Nearby externalApiData={externalApiData} />
+                    : ''}
+                </div>
+              </div>
+            </div>
 
             <div className="pt-16">
               <h1 className="flex justify-center  text-6xl text-gray-800" style={{ color: "darkslateblue" }}><b>{c_joinheading}</b></h1>
@@ -665,6 +675,7 @@ const Location: Template<ExternalApiRenderData> = ({
                 {Join}
               </div>
             </div>
+           
 
           </PageLayout>
         </AnalyticsScopeProvider>
