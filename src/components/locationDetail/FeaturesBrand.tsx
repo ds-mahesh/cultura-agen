@@ -24,7 +24,7 @@ type FeaturesBrand={
 }
 
 export default function FeaturesBrand(props:any) {
-    console.log(props.c_features_brand)
+    // console.log(props.c_features_brand)
     const photos = props.c_features_brand.map((element:any) => (   
 
         <SplideSlide>

@@ -149,7 +149,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (searchKey[0].value != "") {
       getCoordinates(Search);
     }
-    console.log(locationinbuit.length, "fisttimedispaly")
+    // console.log(locationinbuit.length, "fisttimedispaly")
     if (locationinbuit.length == 0) {
       setDisplaymsg(true)
     } else {
@@ -161,7 +161,7 @@ const SearchLayout = (props: any): JSX.Element => {
     setInputValue('');
   }
   const handleSetUserShareLocation = (value: any, userShareStatus: boolean) => {
-    console.log(value, center_latitude, center_longitude, "value");
+    // console.log(value, center_latitude, center_longitude, "value");
     setInputValue(value);
     if (userShareStatus) {
       setCenterLatitude(center_latitude);
@@ -203,7 +203,7 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   }, [locationinbuit])
   useEffect(() => {
-    console.log("yes rerender")
+    // console.log("yes rerender")
     locationResults.map((result: any, index: number) => {
       const resultelement = document.querySelectorAll(
         `.result-list-inner-${index + 1}`
@@ -231,9 +231,9 @@ const SearchLayout = (props: any): JSX.Element => {
         <div className="container-custom">
           <ul>
             <li>
-              <a href="#" className="home" style={{ color: "darkslateblue" }}> Welcome</a>
+              <a href="#" className="home"> Welcome</a>
             </li>
-            <li style={{ color: "darkslateblue" }}>{StaticData.locator_breadcrumb}</li>
+            <li>{StaticData.locator_breadcrumb}</li>
           </ul>
 
         </div>

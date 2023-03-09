@@ -73,11 +73,12 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 {/* <img className=" " src={redmapimage} width="20" height="20"
                 alt={''} /><span className="map-count">D</span> */}
               </div>
-              <h2 id="location-card-name"><Link className="inline-block notHighlight"
+              <h2 id="location-card-name">
+                <Link className="inline-block notHighlight"
                 data-ya-track={`viewDetail -${result.rawData.name}`}
                 eventName={`viewDetail -${result.rawData.name}`}
                 rel="noopener noreferrer"
-                href={`/${result.rawData.id}`}>{result.rawData.name}
+                href={`/${result.rawData.id+'.html'}`}>{result.rawData.name}
               </Link></h2>
               {typeof result.distance != "undefined" ?
                 <div className="distance">
@@ -129,7 +130,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                   longitude={result.rawData.displayCoordinate?.longitude} />
                 : <GetDirection buttonText={StaticData.getDirection_locator} address={address} latitude={result.rawData.yextDisplayCoordinate?.latitude} longitude={result.rawData.yextDisplayCoordinate?.longitude} />}
             </div>
-            <Link type="button" href={`/${result.rawData.id}`} className=" btn notHighlight "
+            <Link type="button" href={`/${result.rawData.id+'.html'}`} className=" btn notHighlight "
               data-ya-track={`viewStore -${result.rawData.name}`}
               eventName={`viewStore -${result.rawData.name}`}
               rel="noopener noreferrer"

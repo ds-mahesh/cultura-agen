@@ -1,3 +1,255 @@
+// import * as React from "react";
+// import "../index.css";
+// import {
+//   Template,
+//   GetPath,
+//   GetRedirects,
+//   TemplateConfig,
+//   TemplateProps,
+//   TemplateRenderProps,
+//   GetHeadConfig,
+//   HeadConfig,
+// } from "@yext/pages";
+// import BreadCrumbs from "../components/layouts/Breadcrumb";
+// import constant from "../constant";
+// import Banner from "../components/locationDetail/banner";
+// import { StaticData } from "../../sites-global/staticData";
+// import PageLayout from "../components/layouts/PageLayout";
+// import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
+// import Header from "../components/dmheader/Header";
+// import Footer from "../components/dmheader/Footer";
+// import { Link } from "@yext/pages/components";
+
+
+
+// /**
+//  * Required when Knowledge Graph data is used for a template.
+//  */
+// var currentUrl = "";
+// export const config: TemplateConfig = {
+//   stream: {
+//     $id: "ce_country",
+//     // Specifies the exact data that each generated document will contain. This data is passed in
+//     // directly as props to the default exported function.
+//     fields: [
+//       "id",
+//       "uid",
+//       "meta",
+//       "name",
+//       "address",
+//       "mainPhone",
+//       "slug",
+//       // "c_locatorBannerImage",
+//       // "c_locatorBannerTitle",
+//       "dm_directoryParents.name",
+//       "dm_directoryParents.slug",
+//       "dm_directoryParents.meta.entityType",
+//       "dm_directoryChildren.name",
+//       "dm_directoryChildren.address",
+//       "dm_directoryChildren.slug",
+//       "dm_directoryChildren.dm_directoryChildren.name",
+//       "dm_directoryChildren.dm_directoryChildrenCount",
+//       "dm_directoryChildren.dm_directoryChildren.slug",
+//       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
+//       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
+//       "dm_directoryChildren.yextDisplayCoordinate"
+//     ],
+//     // Defines the scope of entities that qualify for this stream.
+//     filter: {
+//       entityTypes: ["ce_country"],
+//       savedFilterIds: [
+//         "dm_stores-directory_address_countrycode"
+//       ]
+//     },
+//     // The entity language profiles that documents will be generated for.
+//     localization: {
+//       locales: ["en"],
+//       primary: false,
+//     },
+//   },
+// };
+
+
+// export const getPath: GetPath<TemplateProps> = ({ document }) => {
+//   currentUrl = "/" + document.slug.toString() + ".html";
+//   return "/" + document.slug.toString() + ".html";
+// };
+
+// // export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
+// //   return [`index-old/${document.id.toString()}`];
+// // };
+
+
+// export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
+//   relativePrefixToRoot,
+//   path,
+//   document,
+// }): HeadConfig => {
+  
+//   return {
+//     title: document.name,
+//     charset: "UTF-8",
+//     viewport: "width=device-width, initial-scale=1",
+//     tags: [
+//       {
+//         type: "meta",
+//         attributes: {
+//           description: document.description,
+//         },
+//       },
+//       // {
+//       //   type: "link",
+//       //   attributes: {
+//       //     rel: 'icon',
+//       //     type: 'image/x-icon',
+//       //     href: Favicon
+//       //   },
+//       // }
+//     ],
+//   };
+// };
+
+
+
+
+// const country: Template<TemplateRenderProps> = ({
+//   relativePrefixToRoot,
+//   path,
+//   document,
+// }) => {
+//   const {
+//     name,
+//     slug,
+//     _site,
+//     address,
+//     c_locatorBannerImage,
+//     c_locatorBannerTitle,
+//     dm_directoryParents,
+//     dm_directoryChildren
+//   } = document;
+
+//   // let slugString = "";
+//   // document.dm_directoryParents.forEach((e: any) => {
+//   //   slugString += e.slug + "/";
+//   // });
+//   // const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
+
+//   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
+//     let detlslug;
+
+
+//     if (typeof entity.dm_directoryChildren != "undefined") {
+//       if (entity.dm_directoryChildrenCount == 1) {
+//         entity.dm_directoryChildren.map((res: any) => {
+//           // console.log(res,"jhgsvhfvbfb");
+//           let detlslug1 = "";
+
+//           if (!res.slug) {
+//             let slugString = res.id + " " + res.name;
+//             let slug = slugString;
+//             detlslug1 = `${slug}.html`;
+//           } else {
+//             detlslug1 = `${res.slug.toString()}.html`;
+//           }
+          
+
+//           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
+//             console.log(detl,"jhgsvhfvbfb");
+//             if (!detl.slug) {
+//               let slugString = detl.id + " " + detl.slug;
+//               let slug = slugString;
+//               detlslug1 = `${slug}.html`;
+//             } else {
+//               detlslug1 = `${detl.slug.toString()}.html`;
+//             }
+
+//             detlslug = detlslug1;
+
+//           }) : detlslug = detlslug1;
+      
+
+//         });
+//       }
+//       else {
+//         detlslug = slug + "/" + entity.slug + ".html";
+//         // console.log(detlslug,"dghgdjghjgd")
+//       }
+//     }
+//     // let detailPageUrl = '';
+//     // var name: any = entity.name.toLowerCase();
+//     // var string: any = name.toString();
+//     // let removeSpecialCharacters = string.replace(
+//     //   /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
+//     //   "");
+//     // let result: any = removeSpecialCharacters.replaceAll(" ", "-");
+//     // if (!entity.slug || entity.slug == "undefined") {
+//     //   detailPageUrl = `${entity.id}-${result}.html`
+//     // }
+//     // else {
+//     //   detailPageUrl = `${entity.slug.toString()}.html`
+//     //   console.log(detailPageUrl);
+//     // }
+
+//     return (
+//     //   <li className=" storelocation-category">
+//     //     <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
+//     //    {entity.name}
+//     //  </Link>
+//     //   </li>
+//       <li className=" storelocation-category">
+//       <a
+//         key={entity.slug}
+//         href={slug +"/"+ entity.slug + ".html"}
+//       >
+//         {entity.name} ({entity.dm_directoryChildrenCount})
+//       </a>
+//     </li>
+//   )
+// }) : null;
+       
+
+
+
+//   let bannerimage = c_locatorBannerImage ? c_locatorBannerImage.map((element: any) => {
+//     return element.url
+//   }) : null;
+
+//   return (
+//     <>
+//       <PageLayout _site={_site}>
+//         <div className="country-breadcrumb">
+//         <BreadCrumbs
+//           name={regionNames.of(name)}
+//           address={address}
+//           parents={dm_directoryParents}
+//           baseUrl={relativePrefixToRoot}
+//         ></BreadCrumbs>
+//         </div>
+//         <div className="content-list" style={{backgroundColor:"lightgreen"}}>
+//           <div className="container">
+//             <div className="sec-title">
+//               <h2 style={{ textAlign: "center" }}>
+//                 {StaticData.AllCities} {regionNames.of(name)}{" "}
+//               </h2>
+//             </div>
+
+//             <ul className="region-list">
+
+//               {childrenDivs}
+//             </ul>
+
+//           </div>
+//         </div>
+       
+//       </PageLayout>
+//     </>
+//   );
+// };
+
+// export default country;
+
+
+
 import * as React from "react";
 import "../index.css";
 import {
@@ -11,14 +263,15 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
-import constant from "../constant";
-import Banner from "../components/locationDetail/banner";
+// import constant from "../constant";
+// import Banner1 from "../components/locationDetail/Banner";
+import Banner1 from "../components/locationDetail/Banner1";
 import { StaticData } from "../../sites-global/staticData";
 import PageLayout from "../components/layouts/PageLayout";
 import { favicon, regionNames, stagingBaseurl } from "../../sites-global/global";
-import Header from "../components/dmheader/Header";
-import Footer from "../components/dmheader/Footer";
-import { Link } from "@yext/pages/components";
+// import Footer1 from "../components/layouts/NewFooter";
+// import Header1 from "../components/layouts/NewHeader";
+import PhotoSlider from "../components/locationDetail/PhotoSlider";
 
 
 
@@ -28,7 +281,7 @@ import { Link } from "@yext/pages/components";
 var currentUrl = "";
 export const config: TemplateConfig = {
   stream: {
-    $id: "ce_country",
+    $id: "country",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
@@ -51,8 +304,7 @@ export const config: TemplateConfig = {
       "dm_directoryChildren.dm_directoryChildrenCount",
       "dm_directoryChildren.dm_directoryChildren.slug",
       "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
-      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug",
-      "dm_directoryChildren.yextDisplayCoordinate"
+      "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -85,30 +337,116 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   path,
   document,
 }): HeadConfig => {
-  
+
   return {
-    title: document.name,
+    title: `${document.c_meta_title ? document.c_meta_title : `${document.name} | Find a Local Store`}`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
       {
-        type: "meta",
+        type: "link",
         attributes: {
-          description: document.description,
+          rel: "shortcut icon",
+          href: favicon,
         },
       },
-      // {
-      //   type: "link",
-      //   attributes: {
-      //     rel: 'icon',
-      //     type: 'image/x-icon',
-      //     href: Favicon
-      //   },
-      // }
+        {
+          type: "meta",
+          attributes: {
+            name: "description",
+            content:`${document.c_meta_description?document.c_meta_description:`Use this page to find your nearest ${document.name} and discover the location details you need to visit us today.`}`,
+          },
+        },
+
+        {
+          type: "meta",
+          attributes: {
+            name: "author",
+            content: StaticData.Brandname,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            name: "keywords",
+            content: document.name,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            name: "robots",
+            content: "noindex, nofollow",
+          },
+        },
+
+        // {
+        //   type: "link",
+        //   attributes: {
+        //     rel: "canonical",
+        //     href: `${
+        //       stagingBaseurl 
+        //          ? stagingBaseurl + document.slug + ".html"
+        //          : "/" + document.slug + ".html"
+        //     }`,
+        //   },
+        // },
+      //   // /og tags
+
+        {
+          type: "meta",
+          attributes: {
+            property: "og:url",
+            content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:description",
+            content: `${document.c_meta_description ? document.c_meta_description : `Find ${document.name}. We stock high-quality, robust products at competitive rates.`}`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:title",
+            content: `${document.name}`,
+          },
+        },
+        {
+          type: "meta",
+          attributes: {
+            property: "og:image",
+            content: favicon,
+          },
+        },
+
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:card",
+          content: "summary",
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:url",
+          content: `/${document.slug?document.slug:`${document.name.toLowerCase()}`}.html`,
+        },
+      },
+
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:description",
+          content: `${document.c_meta_description?document.c_meta_description:`Find MGM Timber Store in ${document.name}. We stock high-quality, robust products at competitive rates.`}`
+        },
+      },
     ],
   };
 };
-
 
 
 
@@ -127,13 +465,6 @@ const country: Template<TemplateRenderProps> = ({
     dm_directoryParents,
     dm_directoryChildren
   } = document;
-
-  let slugString = "";
-  document.dm_directoryParents.forEach((e: any) => {
-    slugString += e.slug + "/";
-  });
-  const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
-
   const childrenDivs = dm_directoryChildren ? dm_directoryChildren.map((entity: any) => {
     let detlslug;
 
@@ -141,7 +472,7 @@ const country: Template<TemplateRenderProps> = ({
     if (typeof entity.dm_directoryChildren != "undefined") {
       if (entity.dm_directoryChildrenCount == 1) {
         entity.dm_directoryChildren.map((res: any) => {
-
+          // console.log(res,"jhgsvhfvbfb")
           let detlslug1 = "";
 
           if (!res.slug) {
@@ -151,19 +482,13 @@ const country: Template<TemplateRenderProps> = ({
           } else {
             detlslug1 = `${res.slug.toString()}.html`;
           }
-        //   if (res.meta.entityType.id == 'ce_city') {
-        //     detlslug1 = "gb/" + detlslug1;
-        //   } else {
-        //     detlslug1 = detlslug1;
-        //   }
-
-          // console.log(entity.name, res);
+          
 
           res.dm_directoryChildren ? res.dm_directoryChildren.map((detl: any) => {
 
             if (!detl.slug) {
               let slugString = detl.id + " " + detl.name;
-              let slug =slugString;
+              let slug = slugString;
               detlslug1 = `${slug}.html`;
             } else {
               detlslug1 = `${detl.slug.toString()}.html`;
@@ -172,37 +497,42 @@ const country: Template<TemplateRenderProps> = ({
             detlslug = detlslug1;
 
           }) : detlslug = detlslug1;
+      
 
-
-        })
+        });
       }
       else {
         detlslug = slug + "/" + entity.slug + ".html";
+        // console.log(detlslug,"dghgdjghjgd")
       }
     }
 
-    let detailPageUrl = '';
-    var name: any = entity.name.toLowerCase();
-    var string: any = name.toString();
-    let removeSpecialCharacters = string.replace(
-      /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
-      "");
-    let result: any = removeSpecialCharacters.replaceAll(" ", "-");
-    if (!entity.slug || entity.slug == "undefined") {
-      detailPageUrl = `${entity.id}-${result}.html`
-    }
-    else {
-      detailPageUrl = `${entity.slug.toString()}.html`
-      console.log(detailPageUrl);
-    }
+    // if (typeof entity.dm_directoryChildren != "undefined") {
+    //   if (entity.dm_directoryChildrenCount == 1) {
+    //     entity.dm_directoryChildren.map((res: any) => {
+    //       res.dm_directoryChildren.map((detl: any) => {
+    //         var name: any = detl.name.toLowerCase();
+    //         var string: any = name.toString();
+    //         let result: any = string.replaceAll(" ", "-");
+    //         detlslug = result + ".html";
+    //         // console.log(detlslug, "detlslug");
+    //       });
+    //     });
+    //   } else {
+    //     detlslug = "/" + slug + "/" + entity.slug + ".html";
+    //     // {console.log(detlslug,"lower")}
+    //   }
+    // }
 
     return (
       <li className=" storelocation-category">
-        <Link eventName={"Location detail"} key={entity.slug} href={`/${detailPageUrl}`}>
-       {entity.name}
-     </Link>
+        <a
+          key={entity.slug}
+          href={detlslug}
+        >
+          {entity.name} ({entity.dm_directoryChildrenCount})
+        </a>
       </li>
-       
     )
   }) : null;
 
@@ -213,32 +543,31 @@ const country: Template<TemplateRenderProps> = ({
 
   return (
     <>
+      
       <PageLayout _site={_site}>
-        <div className="country-breadcrumb">
-        <BreadCrumbs
+      <BreadCrumbs
           name={regionNames.of(name)}
           address={address}
           parents={dm_directoryParents}
           baseUrl={relativePrefixToRoot}
         ></BreadCrumbs>
-        </div>
-        <div className="content-list" style={{backgroundColor:"lightgreen"}}>
-          <div className="container">
-            <div className="sec-title">
-              <h2 style={{ textAlign: "center" }}>
-                {StaticData.AllCities} {regionNames.of(name)}{" "}
-              </h2>
-            </div>
-
-            <ul className="region-list">
-
-              {childrenDivs}
-            </ul>
-
+    
+      <div className="content-list">
+        <div className="container">
+          <div className="sec-title">
+            <h2 style={{ textAlign: "center" }}>
+              {StaticData.AllRegion} {regionNames.of(name)}{" "}
+            </h2>
           </div>
+
+          <ul className="region-list" style={{ alignContent: "center", justifyContent: "center" }}>
+            {childrenDivs}
+          </ul>
         </div>
-       
+      </div>
+     
       </PageLayout>
+
     </>
   );
 };

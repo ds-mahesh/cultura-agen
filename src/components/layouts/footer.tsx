@@ -9,7 +9,7 @@ import Newsletter from "../commons/Newsletter";
 
 const Footer = (props: any) => {
 	const { label, images, _site } = props;
-	console.log(props)
+	// console.log(props)
 	React.useEffect(() => {
 		document.body.setAttribute("id", "body");
 	})

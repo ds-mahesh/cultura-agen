@@ -17,7 +17,7 @@ const BreadCrumbs = (props: data) => {
   var data: any = [];
   React.useEffect(() => {
     setURL(props.parents, props.baseUrl);
-  console.log(props.parents)
+  // console.log(props.parents)
   }, [setList]);
 
   const setURL = (parents: any, baseUrl: any) => {
@@ -83,7 +83,7 @@ const BreadCrumbs = (props: data) => {
     <div className="breadcrumb">
       <div className="container mx-auto">
         <ul className="flex">
-          <li style={{}}>
+          <li>
             <Link className="home" href="/"
              data-ya-track="Breadcrumbs"
              eventName={`Breadcrumbs`}
@@ -111,7 +111,7 @@ const BreadCrumbs = (props: data) => {
           ) : (
             <>
               {props.address && props.address.city ? (
-                <li className="inline-block" style={{color:"white"}}>
+                <li className="inline-block">
                   {" "}
                   <Link href={props.baseUrl + props.address.city }
                    data-ya-track="Breadcrumbs"

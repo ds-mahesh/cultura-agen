@@ -714,6 +714,7 @@ nav[aria-label="Pagination"] button:disabled{@apply cursor-not-allowed text-opac
 
 .location-with-filter {
   color: darkslateblue;
+  padding-top: 22px;
 }
 
 .location .button-bx .btn {
@@ -922,15 +923,24 @@ table.day-hrs {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
+  background-color: darkslateblue;
+  color: white;
   
 }
-
-.breadcrumb .container ul li{
+.breadcrumb  ul li{
   color: white;
+ 
 }
-.breadcrumb .container-custom ul li {
+/* .breadcrumb .container-custom ul li {
   color:white;
-}
+} */
 .country-breadcrumb {
   background-color: darkslateblue;
+}
+
+.region-list .storelocation-category a {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color:rgb(42, 31, 105);
+  color: white;
 }
