@@ -826,10 +826,6 @@ body {
   padding-left: 5px;
 }
 
-.site-footer .container {
-  margin-left: 220px;
-}
-
 .map-sec {
   height: 60vh;
   width: 100%;
@@ -959,4 +955,42 @@ table.day-hrs {
   background-color:rgb(42, 31, 105);
   color: white;
 }
+
+.header-drop-down-list {
+  height: 62px;
+  
+}
+
+.site-footer .footer-dropdown-list {
+  /* margin-left: 220px; */
+  margin-top: -78px;
+  background: #ffffff;
+  padding: 14px 0;
+  /* transition: 2s; */
+  width: 100%;
+}
+
+/* .site-footer .container ul li {
+  padding-left: 10px;
+} */
+.footer-dropdown-btn {
+  display: inline-flex;
+  margin-left: 100px;
+}
+
+.footer-dropdown button {
+  padding-left: 140px;
+ padding-bottom: 80px;
+ padding-top: 50px;
+}
+
+.footer-dropdown {
+  width: 100%;
+}
+.footer-dropdown-list ul {
+  padding-left: 240px;
+  padding-top: 40px;
+}
+
+
 

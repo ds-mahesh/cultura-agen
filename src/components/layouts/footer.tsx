@@ -13,17 +13,17 @@ const Footer = (props: any) => {
 	React.useEffect(() => {
 		document.body.setAttribute("id", "body");
 	})
-	// const toggle = () => {
-	//   (document.getElementById("body") as HTMLInputElement).classList.toggle('');
-	// }
-	// function show_hide_help() {
-	// 	var click = document.getElementById("help-regards");
-	// 	if (click.style.display === "none") {
-	// 		click.style.display = "block";
-	// 	} else {
-	// 		click.style.display = "none";
-	// 	}
-	// }
+	const toggle = () => {
+		(document.getElementById("body") as HTMLInputElement).classList.toggle('');
+	}
+	function show_hide_help() {
+		var click: any = document.getElementById("help-regards");
+		if (click.style.display === "none") {
+			click.style.display = "block";
+		} else {
+			click.style.display = "none";
+		}
+	}
 
 	const Topfooterlinks = props?._site?.c_topfooterlinks?.map((link: any) => (
 		<div className="" style={{ width: "180px" }}>
@@ -44,9 +44,7 @@ const Footer = (props: any) => {
 	));
 
 	const HelpServicesRegards = props?._site?.c_helpServicesRegards?.map((link: any) => (
-		<a className="" href={link.link} >
-			<span>||{link.label} ||</span><br />
-		</a>
+		<div className="footer-dropdown-btn">||{link.label} ||</div>
 	));
 
 	const Needhelp = props?._site?.c_needhelp?.map((link: any) => (
@@ -66,8 +64,6 @@ const Footer = (props: any) => {
 			<span>{link.label}</span><br />
 		</a>
 	));
-
-
 
 	const Inregardsto = props?._site?.c_inregardsto?.map((link: any) => (
 		<a className="" href={link.link} >
@@ -107,41 +103,18 @@ const Footer = (props: any) => {
 						</div>
 						<p className="flex justify-center pt-4">{props._site?.c_coustomerservices.description}</p>
 					</div>
-
 				</div>
-				<div className="pt-12 pb-24" style={{}}>
-					<div style={{ backgroundColor: "" }} className="flex space-x-4 ">
-						<div style={{ color: "darkslateblue", marginLeft: "280px", position:"absolute", display: "inline-block" }} className="text-xl font-bold">
-							<button className="flex space-x-28">{HelpServicesRegards}</button>
-						</div>
+				<div className="footer-dropdown" style={{ color: "darkslateblue", display: "inline-block" }} >
+					<div className="footer-dropdown-list" id="help-regards" style={{ display: "none", position: "absolute" }}>
+						<ul className="flex space-x-16">
+							<li >{Needhelp}</li>
+							<li style={{ marginLeft: "10px" }}>{Whoareyou}</li>
+							<li style={{ marginLeft: "120px" }}>{Servicesandproducts}</li>
+							<li style={{ marginLeft: "150px" }}>{Inregardsto}</li>
+						</ul>
 					</div>
+					<button onMouseOver={show_hide_help} onMouseOut={show_hide_help}>{HelpServicesRegards}</button>
 				</div>
-				{/* <div className="container flex" id="help-regards" style={{ display: "none",position:"relative" }}>
-					<div className="flex space-x-28">
-						<div className="text-xl">
-							<ul style={{ color: "black" }} className="menu_footer">
-								<li><a >{Needhelp}</a></li>
-							</ul>
-						</div>
-						<div className="text-xl">
-							<ul style={{ color: "black"}} className="menu_footer">
-								<li><a >{Whoareyou}</a></li>
-							</ul>
-						</div>
-						<div className="text-xl">{props._site?.c_company?.headingName}
-							<ul style={{ color: "black" }} className="menu_footer">
-								<li><a >{Servicesandproducts}</a></li>
-							</ul>
-						</div>
-						<div className="text-xl">
-							<ul style={{ color: "black" }} className="menu_footer">
-								<li><a >{Inregardsto}</a></li>
-							</ul>
-						</div>
-					</div>
-				</div> */}
-
-
 			</footer>
 			<CookieConsent
 				buttonText={"Accept"}
