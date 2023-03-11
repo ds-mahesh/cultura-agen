@@ -105,7 +105,7 @@ const Header = (props: any) => {
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
         <div style={{ height: "25px", backgroundColor: "" }} className="flex space-x-4 ">
-          <div style={{ color: "whitesmoke", fontSize: "12px", marginLeft: "980px" }} className="flex space-x-8 text-2xl ">
+          <div style={{ color: "whitesmoke", fontSize: "14px", marginLeft: "940px" }} className="flex space-x-8 text-2xl ">
             {TopHeaderLink}
           </div>
         </div>
