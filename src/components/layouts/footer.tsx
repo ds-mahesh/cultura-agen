@@ -35,16 +35,14 @@ const Footer = (props: any) => {
 	));
 
 	const SocialNetworks = props?._site?.c_socialNetworks?.map((link: any) => (
-		<div className="" style={{}}>
 			<a className="" href={link.link} >
 				<img src={link.image?.url} className="" style={{ height: "15px", width: "18px" }} /><br />
 				{/* <span className=""> {link.navBarLabel?.label}</span> */}
 			</a>
-		</div>
 	));
 
 	const HelpServicesRegards = props?._site?.c_helpServicesRegards?.map((link: any) => (
-		<div className="footer-dropdown-btn">||{link.label} ||</div>
+		<div className="footer-dropdown-btn">|{link.label}| </div>
 	));
 
 	const Needhelp = props?._site?.c_needhelp?.map((link: any) => (
@@ -85,23 +83,21 @@ const Footer = (props: any) => {
 					</div>
 				</div>
 
-				<div className="flex space-x-28 " style={{ paddingTop: "20px", paddingLeft: "50px" }}>
-					<div className="" style={{ paddingLeft: "100px" }}>
-						<h2 className="text-xl font-bold" style={{ color: "darkslateblue", marginLeft: "50px" }}>Social networks</h2>
-						<div className="flex space-x-6 pt-6">
+				<div className="mid-footer">
+					<div className="social-icons">
+						<h2 className="text-xl font-bold" style={{ color: "darkslateblue"}}>Social networks</h2>
+						<span className="flex space-x-6 pt-6">
 							{SocialNetworks}
-						</div>
+						</span>
 					</div>
-					<div className="">
-						<h2 className="text-xl font-bold" style={{ color: "darkslateblue", marginLeft: "100px" }}>Newsletter</h2>
+					<div className="newsletter">
+						<h2 className="text-xl font-bold" style={{ color: "darkslateblue"}}>Newsletter</h2>
 						<Newsletter />
 					</div>
-					<div style={{ width: "380px" }}>
-						<h2 className="flex justify-center text-xl font-bold" style={{ color: "darkslateblue", marginLeft: "30px" }}>Customer service</h2>
-						<div className="flex justify-center pt-4">
-							<img className="" style={{ height: "20px", width: "250px" }} src={props._site?.c_coustomerservices.image?.url} />
-						</div>
-						<p className="flex justify-center pt-4">{props._site?.c_coustomerservices.description}</p>
+					<div className="coustomers-services">
+						<h2 className=" text-xl font-bold" style={{ color: "darkslateblue"}}>Customer service</h2>
+						<img className="" src={props._site?.c_coustomerservices.image?.url} />
+						<p className="pt-4">{props._site?.c_coustomerservices.description}</p>
 					</div>
 				</div>
 				<div className="footer-dropdown" style={{ color: "darkslateblue", display: "inline-block" }} >

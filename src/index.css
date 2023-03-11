@@ -956,10 +956,30 @@ table.day-hrs {
   color: white;
 }
 
+/* header css*/
+
 .header-drop-down-list {
   height: 62px;
-  
+  width: 100%;
+  color: slateblue;
 }
+/* .header-link button {
+  padding-left: 40px;
+} */
+.bottom-header-label {
+  display: flex;
+  width: 75%;
+}
+.bottom-header-label button {
+margin-top: 20px;
+margin-left: 30px;
+}
+.header-links span a button {
+  padding-left: 40px;
+}
+
+
+/* footer css*/
 
 .site-footer .footer-dropdown-list {
   /* margin-left: 220px; */
@@ -990,6 +1010,49 @@ table.day-hrs {
 .footer-dropdown-list ul {
   padding-left: 240px;
   padding-top: 40px;
+}
+.mid-footer {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.mid-footer .social-icons {
+  width: 33.33%;
+}
+.mid-footer .social-icons h2{
+  padding-left: 200px;
+}
+.mid-footer .social-icons span{
+  padding-left: 180px;
+  padding-top: 15px;
+}
+.newsletter {
+  width: 33.33%;
+}
+.mid-footer .newsletter span {
+  padding-left: 70px;
+}
+.mid-footer .newsletter h2 {
+  padding-left: 150px;
+}
+.coustomers-services {
+  width: 33.33%;
+}
+.coustomers-services h2 {
+  padding-left: 100px;
+}
+
+.coustomers-services img {
+  padding-left: 40px;
+  padding-top: 15px;
+}
+
+.coustomers-services p {
+  padding-left: 10px;
+  color: darkslateblue;
+  font-size: medium;
+  padding-right: 30px;
 }
 
 

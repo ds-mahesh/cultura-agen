@@ -65,25 +65,25 @@ const Header = (props: any) => {
   ));
 
   const Productuniverselink = props?._site?.c_productuniverselink?.map((link: any) => (
-    <a className="flex" href={link.link}>
-      <button className="flex">{link.label}</button>
+    <a className="" href={link.link}>
+      <button className="">{link.label}</button>
     </a>
   ));
 
   const Specialslink = props?._site?.c_specialslink?.map((link: any) => (
-    <a className="flex" href={link.link}>
+    <a className="" href={link.link}>
       <button >{link.label}</button>
     </a>
   ));
 
   const Ourcourselink = props?._site?.c_ourcourselink?.map((link: any) => (
-    <a className="flex" href={link.link}>
+    <a className="" href={link.link}>
       <button >{link.label}</button>
     </a>
   ));
 
   const Easterlink = props?._site?.c_easterlink?.map((link: any) => (
-    <a className="flex" href={link.link}>
+    <a className="" href={link.link}>
       <button >{link.label}</button>
     </a>
   ));
@@ -119,51 +119,54 @@ const Header = (props: any) => {
           </div>
         </div>
       </div>
-      
-        <div style={{ height: "70px" }} className="flex space-x-8 ">
-          <div style={{ color: "navy", marginTop: "20px", marginLeft: "40px", fontSize: "17px" }} className="flex space-x-12 font-medium">
-            <div className="header-link" style={{ display: "block"}}>
-              <button onClick={show_hide} className="text-blue-600 font-bold">
-                {props?._site?.c_productUniverse.label}
-                <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
-              </button>
-              <div id="product-link" className="header-drop-down-list" style={{ display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
-                {Productuniverselink}
-              </div>
-            </div>
-            <div className=" " style={{ display: "inline-block" }}>
-              <button onClick={show_hide1} className="text-blue-600 font-bold">
-                {props?._site?.c_specials.label}
-                <img className="h-6 w-32" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
-              </button>
-              <div id="specials-link" className="drop-down-list" style={{ display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
-                {Specialslink}
-              </div>
-            </div>
-            <div className=" " style={{ display: "inline-block" }}>
-              <button onClick={show_hide2} className="text-blue-600 font-bold">
-                {props?._site?.c_ourCourses.label}
-                <img className="h-6 w-36" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
-              </button>
-              <div id="our-cources-link" className="drop-down-list" style={{ display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
-                {Ourcourselink}
-              </div>
-            </div>
-            <div className="" style={{ display: "inline-block" }}>
-              <button onClick={show_hide3} style={{ color: "red" }} className="text-blue-600 font-bold">
-                {props?._site?.c_easter.label}
-                <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
-              </button>
-              <div id="easter-link" className="drop-down-list" style={{ display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
-                {Easterlink}
-              </div>
-            </div>
+
+      <div style={{ height: "70px" }} className="flex space-x-8 ">
+        <div style={{ color: "navy", fontSize: "17px" }} className="bottom-header-label font-medium">
+          <div className="header-link" style={{ display: "block" }}>
+            <button onMouseOver={show_hide} onMouseOut={show_hide} className="text-blue-600 font-bold">
+              {props?._site?.c_productUniverse.label}
+              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+            </button>
           </div>
-          <div className="flex space-x-8" style={{ marginTop: "15px", marginLeft: "370px" }}>
-            {InspirationDIY}
+          <div className=" " style={{ display: "inline-block" }}>
+            <button onMouseOver={show_hide1}  onMouseOut={show_hide1} className="text-blue-600 font-bold">
+              {props?._site?.c_specials.label}
+              <img className="h-6 w-32" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+            </button>
+
+          </div>
+          <div className=" " style={{ display: "inline-block" }}>
+            <button onMouseOver={show_hide2} onMouseOut={show_hide2} className="text-blue-600 font-bold">
+              {props?._site?.c_ourCourses.label}
+              <img className="h-6 w-36" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+            </button>
+          </div>
+          <div className="" style={{ display: "inline-block" }}>
+            <button onMouseOver={show_hide3} onMouseOut={show_hide3} style={{ color: "red" }} className="text-blue-600 font-bold">
+              {props?._site?.c_easter.label}
+              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+            </button>
           </div>
         </div>
-      
+        <div className="flex space-x-8" style={{ marginTop: "15px" }}>
+          {InspirationDIY}
+        </div>
+      </div>
+      <div className="header-links">
+        <span id="product-link" className="header-drop-down-list" style={{padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+          {Productuniverselink}
+        </span>
+        <span id="specials-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px",display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+          {Specialslink}
+        </span>
+        <span id="our-cources-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+          {Ourcourselink}
+        </span>
+        <span id="easter-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+          {Easterlink}
+        </span>
+      </div>
+
     </>
   );
 };
