@@ -25,9 +25,21 @@ const BreadCrumbs = (props: data) => {
 
     if (parents) {
       for (let i = 0; i < parents.length; i++) {
+      
+        if (parents[i].meta.entityType.id == "ce_root") {
+          // parents[i].name = regionNames.of(parents[i].name);
+ 
+          parents[i].slug = parents[i].slug;
+          
+          data.push({
+            name:(parents[i].name),
+            slug: parents[i].slug,
+            count:parents[i].dm_directoryChildrenCount
+          });
 
+        } 
            
-       if (parents[i].meta.entityType.id == "ce_country") {
+      if (parents[i].meta.entityType.id == "ce_country") {
           // parents[i].name = regionNames.of(parents[i].name);
  
           parents[i].slug = parents[i].slug;

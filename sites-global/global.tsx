@@ -8,6 +8,7 @@ export const favicon="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMA
 export const apiKey = "153b6510db48b52cd5298c7be4b96784";
 export const googleApikey = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
 export const regionNames = new Intl.DisplayNames(['en'], { type: 'region' })
+// export const CountryNames = new Intl.DisplayNames(['en'], { type: 'country' })
 export const AnalyticsEnableDebugging  = true;
 export const AnalyticsEnableTrackingCookie  = true;
 export const conversionDetailsDirection = {

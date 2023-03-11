@@ -44,7 +44,7 @@ const PhotoSlider = (props: any ,index :any) => {
         <div className="">
           <img className="h-96 w-full" src={c_theDivingBoard.cardimage.url} />
         </div>
-        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"red" }}>
+        <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-300px",color:"red"}}>
           <h2 className="font-medium text-xl">{c_theDivingBoard.cardTitle}</h2>
           {/* <p>Until {c_theDivingBoard.cardDate}</p> */}
           <h1 className="pt-12 font-bold">{c_theDivingBoard.cardHeading}</h1>
@@ -102,7 +102,7 @@ const GiftCard =
         {ITeamUp}
         {GiftCard}
         {NewsStore}
-        
+    
         
         </Splide>
     
