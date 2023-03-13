@@ -52,59 +52,59 @@ const Header = (props: any) => {
   let NewVAr: any = props.label;
   // console.log(props.label,"Props");
   const TopHeaderLink = props?._site?.c_topHeaderLink?.map((link: any) => (
-    <a className="navbar-item" href={link.link} >
+    <a className="" href={link.link} >
       <span className="text-blue-600">{link.label}   ||</span>
     </a>
   ));
 
   const NavBarlinks = props?._site?.c_navBarlinks?.map((link: any) => (
-    <a className="flex navbar-item" href={link.link} >
+    <a className="flex " href={link.link} >
       <span className=" text-blue-600">{link.navBarLabel.label}</span>
-      <img className="pl-2" style={{ height: "23px", width: "28px" }} src={link.image?.url} />
+      <img className="pl-2" style={{ height: "23px", width: "28px" }} src={link.image?.url} alt={''} />
     </a>
   ));
 
   const Productuniverselink = props?._site?.c_productuniverselink?.map((link: any) => (
     <a className="" href={link.link}>
-      <button className="">{link.label}</button>
+      <span className="">{link.label}</span>
     </a>
   ));
 
   const Specialslink = props?._site?.c_specialslink?.map((link: any) => (
     <a className="" href={link.link}>
-      <button >{link.label}</button>
+      <span >{link.label}</span>
     </a>
   ));
 
   const Ourcourselink = props?._site?.c_ourcourselink?.map((link: any) => (
     <a className="" href={link.link}>
-      <button >{link.label}</button>
+      <span >{link.label}</span>
     </a>
   ));
 
   const Easterlink = props?._site?.c_easterlink?.map((link: any) => (
     <a className="" href={link.link}>
-      <button >{link.label}</button>
+      <span >{link.label}</span>
     </a>
   ));
 
   const InspirationDIY = props?._site?.c_inspirationDIY?.map((link: any) => (
-    <a className="flex space-x-4 navbar-item" href={link.link} >
-      <img className="rounded-full" style={{ height: "40px", width: "40px" }} src={link.image?.url} />
+    <a className="flex space-x-4" href={link.link} >
+      <img className="rounded-full" style={{ height: "40px", width: "40px" }} src={link.image?.url} alt={''} />
       <span className="text-blue-600" style={{ marginTop: "5px" }}>{link.navBarLabel.label}</span>
     </a>
   ));
 
   const CulturaImage = props?._site?.c_culturaImage?.map((link: any) => (
     <a className="flex space-x-4 navbar-item" href="">
-      <img className="" style={{ height: "24px", width: "80px" }} src={link.url} />
+      <img style={{ height: "24px", width: "80px" }} src={link.url} alt={''} />
     </a>
   ));
 
   return (
     <>
       <div className="" style={{ backgroundColor: "#252855" }}>
-        <div style={{ height: "25px", backgroundColor: "" }} className="flex space-x-4 ">
+        <div style={{ height: "25px"}} className="flex space-x-4 ">
           <div style={{ color: "whitesmoke", fontSize: "14px", marginLeft: "940px" }} className="flex space-x-8 text-2xl ">
             {TopHeaderLink}
           </div>
@@ -125,26 +125,26 @@ const Header = (props: any) => {
           <div className="header-link" style={{ display: "block" }}>
             <button onMouseOver={show_hide} onMouseOut={show_hide} className="text-blue-600 font-bold">
               {props?._site?.c_productUniverse.label}
-              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" alt={''} />
             </button>
           </div>
           <div className=" " style={{ display: "inline-block" }}>
             <button onMouseOver={show_hide1}  onMouseOut={show_hide1} className="text-blue-600 font-bold">
               {props?._site?.c_specials.label}
-              <img className="h-6 w-32" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+              <img className="h-6 w-32" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" alt={''} />
             </button>
 
           </div>
           <div className=" " style={{ display: "inline-block" }}>
             <button onMouseOver={show_hide2} onMouseOut={show_hide2} className="text-blue-600 font-bold">
               {props?._site?.c_ourCourses.label}
-              <img className="h-6 w-36" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+              <img className="h-6 w-36" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" alt={''}  />
             </button>
           </div>
           <div className="" style={{ display: "inline-block" }}>
             <button onMouseOver={show_hide3} onMouseOut={show_hide3} style={{ color: "red" }} className="text-blue-600 font-bold">
               {props?._site?.c_easter.label}
-              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" />
+              <img className="h-6 w-40" src="https://www.freepnglogos.com/uploads/line-png/draw-black-line-transparent-png-11.png" alt={''}  />
             </button>
           </div>
         </div>
@@ -153,16 +153,16 @@ const Header = (props: any) => {
         </div>
       </div>
       <div className="header-links">
-        <span id="product-link" className="header-drop-down-list" style={{padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+        <span id="product-link" className="header-drop-down-list" style={{paddingLeft: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
           {Productuniverselink}
         </span>
-        <span id="specials-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px",display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+        <span id="specials-link" className="header-drop-down-list" style={{ paddingLeft: "20px", margin: "0px",display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
           {Specialslink}
         </span>
-        <span id="our-cources-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+        <span id="our-cources-link" className="header-drop-down-list" style={{ paddingLeft: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
           {Ourcourselink}
         </span>
-        <span id="easter-link" className="header-drop-down-list" style={{ padding: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
+        <span id="easter-link" className="header-drop-down-list" style={{ paddingLeft: "20px", margin: "0px", display: "none", position: "absolute", backgroundColor: "#d7dce5" }}>
           {Easterlink}
         </span>
       </div>

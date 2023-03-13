@@ -319,7 +319,7 @@ const Location: Template<ExternalApiRenderData> = ({
   const NewsOfthemoment =
     <a className="w-full" href={c_newsOfthemoment.cardcta.link} >
       <div className="w-full">
-        <img className="h-80 w-full" src={c_newsOfthemoment.cardimage.url} />
+        <img className="h-80 w-full" src={c_newsOfthemoment.cardimage.url} alt={''} />
       </div>
       <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px", color: "darkslateblue" }}>
         <h2 className="font-medium text-xl">{c_newsOfthemoment.cardTitle}</h2>
@@ -333,7 +333,7 @@ const Location: Template<ExternalApiRenderData> = ({
   const Tendency =
     <a className="w-full" href={c_tendency.cardcta.link} >
       <div className="w-full">
-        <img className="h-80 w-full" src={c_tendency.cardimage.url} />
+        <img className="h-80 w-full" src={c_tendency.cardimage.url} alt={''} />
       </div>
       <div className="pl-6 -mt-64 pb-24" style={{ marginTop: "-260px", color: "orangered" }}>
         <h2 className="font-medium text-xl">{c_tendency.cardTitle}</h2>
@@ -346,7 +346,7 @@ const Location: Template<ExternalApiRenderData> = ({
 
 
   const Registernowbgimage = c_registernowbgimage?.map((link: any) => (
-    <img className="w-full h-96" src={link?.url} />
+    <img className="w-full h-96" src={link?.url} alt={''} />
   ));
 
   // const NewsStore =

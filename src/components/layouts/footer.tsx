@@ -28,7 +28,7 @@ const Footer = (props: any) => {
 	const Topfooterlinks = props?._site?.c_topfooterlinks?.map((link: any) => (
 		<div className="" style={{ width: "180px" }}>
 			<a className="" href={link.link} >
-				<img src={link.image?.url} className=" h-12 w-12 flex justify-center" />
+				<img src={link.image?.url} className=" h-12 w-12 flex justify-center" alt={''}  />
 				<span className=""> {link.navBarLabel.label}</span>
 			</a>
 		</div>
@@ -36,13 +36,13 @@ const Footer = (props: any) => {
 
 	const SocialNetworks = props?._site?.c_socialNetworks?.map((link: any) => (
 			<a className="" href={link.link} >
-				<img src={link.image?.url} className="" style={{ height: "15px", width: "18px" }} /><br />
+				<img src={link.image?.url} className="" style={{ height: "15px", width: "18px" }} alt={''}  />
 				{/* <span className=""> {link.navBarLabel?.label}</span> */}
 			</a>
 	));
 
 	const HelpServicesRegards = props?._site?.c_helpServicesRegards?.map((link: any) => (
-		<div className="footer-dropdown-btn">|{link.label}| </div>
+		<span className="footer-dropdown-btn">|{link.label}| </span>
 	));
 
 	const Needhelp = props?._site?.c_needhelp?.map((link: any) => (
@@ -96,7 +96,7 @@ const Footer = (props: any) => {
 					</div>
 					<div className="coustomers-services">
 						<h2 className=" text-xl font-bold" style={{ color: "darkslateblue"}}>Customer service</h2>
-						<img className="" src={props._site?.c_coustomerservices.image?.url} />
+						<img className="" src={props._site?.c_coustomerservices.image?.url} alt={''}  />
 						<p className="pt-4">{props._site?.c_coustomerservices.description}</p>
 					</div>
 				</div>

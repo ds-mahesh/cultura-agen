@@ -26,7 +26,7 @@ const Nav = (props: any) => {
 
           </div>
           <div className="flex">
-            <div className="" style={{ width: "600px" }}>
+            <div style={{ width: "600px" }}>
               <div className="input-group relative flex  items-stretch w-full ">
                 <input type="search" className="h-12 form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-full transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none " placeholder="Search for a book,a game..." aria-label="Search" aria-describedby="button-addon2"
                 />
