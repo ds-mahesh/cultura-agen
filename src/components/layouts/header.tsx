@@ -6,6 +6,10 @@ import Nav from "./Nav";
 
 const Header = (props: any) => {
   const { label, images, _site } = props;
+  
+  React.useEffect(() => {
+    document.body.setAttribute("id", "body");
+  })
 
   const toggle = () => {
     (document.getElementById("body") as HTMLInputElement).classList.toggle('');

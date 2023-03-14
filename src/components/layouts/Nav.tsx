@@ -48,8 +48,8 @@ const Nav = (props: any) => {
 
 
         <button type="button" className="menu-btn" id="menu-btn" onClick={toggle}>
-          {/* <div dangerouslySetInnerHTML={{ __html: humburgerIcon }} />
-          <span>Menu</span> */}
+          <div dangerouslySetInnerHTML={{ __html: humburgerIcon }} />
+          {/* <span>Menu</span> */}
         </button>
 
       </div>

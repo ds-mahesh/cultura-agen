@@ -1054,6 +1054,13 @@ margin-left: 30px;
   font-size: medium;
   padding-right: 30px;
 }
+.Culturaservices {
+  display: flex;
+  height: 300px;
+  font-size: x-large;
+  font-weight: bold;
+  color: darkslateblue;
+}
 
 
 

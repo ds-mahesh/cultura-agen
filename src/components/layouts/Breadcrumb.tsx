@@ -101,7 +101,7 @@ const BreadCrumbs = (props: data) => {
              eventName={`Breadcrumbs`}
              rel="noopener noreferrer"
              conversionDetails={conversionDetailsDirection}>
-            {/* <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/> */}
+            <div dangerouslySetInnerHTML={{__html: breadcrumbhome}}/>
             {/* <div>welcome</div> */}
             </Link>
             </li>

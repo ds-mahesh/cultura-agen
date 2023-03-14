@@ -74,6 +74,7 @@ export const config: TemplateConfig = {
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "dm_directoryParents.meta.entityType",
+      "c_culturaservices",
       // "c_kidsandEaster",
       "c_registernowctaimage",
       "c_registernowbgimage",
@@ -295,6 +296,7 @@ const Location: Template<ExternalApiRenderData> = ({
     displayCoordinate,
     cityCoordinate,
     dm_directoryParents,
+    c_culturaservices,
     // c_kidsandEaster,
     c_newsOfthemoment,
     c_tendency,
@@ -314,6 +316,14 @@ const Location: Template<ExternalApiRenderData> = ({
   // const Hours= hours?.monday?.openIntervals?.map((link: any) => (
   //   <span>{link.start}-{link.end}</span>
   // ));
+  const Culturaservices = c_culturaservices?.map((link: any) => (
+    <>
+    <a href={link.navBarLabel.link}>
+    <img className="w-full h-48" src={link?.image?.url} alt={''} />
+    <span>{link.navBarLabel.label}</span>
+    </a>
+    </>
+  ));
 
 
   const NewsOfthemoment =
@@ -625,6 +635,7 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               </div>
             </div> */}
+            <div className="Culturaservices">{Culturaservices}</div>
             <div className="flex space-x-6  pl-20 pr-20">
               {NewsOfthemoment}
               {Tendency}
@@ -655,9 +666,13 @@ const Location: Template<ExternalApiRenderData> = ({
                   c_giftCard={c_giftCard}
                   c_newsStore={c_newsStore}
                 />
+               
                 {/* <Slide c_newsStore={c_newsStore}/> */}
               </div>
             </div>
+            {/* <button style={{height:"20px",width:"50px"}}>
+                  <img src="https://cdn4.vectorstock.com/i/1000x1000/31/13/left-arrow-icon-previous-line-back-symbol-vector-21083113.jpg" alt={''} />
+                </button> */}
             <div className="nearby-sec">
               <div className="container">
                 <div className="sec-title"><h2 className="" >{StaticData.NearStoretext}</h2></div>

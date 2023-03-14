@@ -14,6 +14,7 @@ const PhotoSlider = (props: any ,index :any) => {
     gap: '1rem',
     pagination: false,
     height: '27.8125rem',
+    
   };
 
 
@@ -94,7 +95,7 @@ const GiftCard =
   // ));
   return (
     <>
-     <Splide area-label="photo alider"
+     <Splide area-label="photo alider" 
       options={mainOptions}>
         
        
@@ -105,6 +106,7 @@ const GiftCard =
     
         
         </Splide>
+        
     
     </>
   );

@@ -439,7 +439,7 @@ const Hours = (props: Hours) => {
         </thead>
         <div className="location-hours">
        <div className="pb-4">{StaticData.WeekdayName}  .................................................................{Hours}</div>
-       <div>{StaticData.Sunday}  ..................................................................................... {"farm"}</div>
+       <div>{StaticData.Sunday}  ................................................................................. {"closed"}</div>
        </div>
         {/* {hours && hours.reopenDate ? (
           <span>
